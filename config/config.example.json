@@ -1,0 +1,27 @@
+{
+  "cognitum": {
+    "debug": false,
+    "embedColors": {
+      "default": "",
+      "error": "",
+      "warning": ""
+    },
+    "console": {
+      "title": "",
+      "colors": {
+        "default": "",
+        "error": "",
+        "warning": "",
+        "notice": ""
+      }
+    }
+  },
+  "database": {
+    "pool": {
+      "min": 0,
+      "max": 10,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  }
+}

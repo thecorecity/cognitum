@@ -1,0 +1,12 @@
+{
+  "mariadb": {
+    "host": "",
+    "port": "",
+    "database": "",
+    "username": "",
+    "password": ""
+  },
+  "discord": {
+    "token": ""
+  }
+}
