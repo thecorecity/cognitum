@@ -1,0 +1,32 @@
+{
+  "name": "cognitum",
+  "version": "0.0.0",
+  "description": "Statistics and utilities bot.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecorecity/cognitum.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "statistics",
+    "utilities"
+  ],
+  "author": "The Core Community",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/thecorecity/cognitum/issues"
+  },
+  "homepage": "https://github.com/thecorecity/cognitum#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "discord.js": "^12.2.0"
+  }
+}
