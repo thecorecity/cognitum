@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# IDE settings directory
+# IDE options directory
 .idea

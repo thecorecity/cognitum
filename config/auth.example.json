@@ -1,7 +1,6 @@
 {
   "mariadb": {
     "host": "",
-    "port": "",
     "database": "",
     "username": "",
     "password": ""
