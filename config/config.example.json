@@ -1,6 +1,7 @@
 {
   "cognitum": {
     "debug": false,
+    "prefix": "c!",
     "embedColors": {
       "default": "",
       "error": "",
