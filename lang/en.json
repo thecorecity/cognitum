@@ -4,7 +4,9 @@
   "_languagePackVersion": "1.0.0",
   "bot.description": "This is small statistics and utilities bot for Discord made by The Core Community",
   "bot.name": "Cognitum",
-  "categoryBasic.title": "Basic",
+  "categoryCore.title": "Basic",
   "commandHelp.description": "Showing all available commands and commands usage for every command.",
-  "commandHelp.title": "Help"
+  "commandHelp.title": "Help",
+  "embed.defaultTitle": "Sample Title",
+  "embed.defaultDescription": "Sample Description"
 }
