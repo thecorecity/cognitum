@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://files.thecore.city/schemas/cognitum/language.schema.json",
+  "title": "Language pack file",
+  "type": "object",
+  "properties": {
+    "_languagePack": {
+      "type": "object",
+      "title": "Language pack data",
+      "description": "Information about current pack language, version and authors.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Name",
+          "description": "Pack or pack language name.",
+          "default": "Language"
+        },
+        "authors": {
+          "type": "string",
+          "title": "Contributors",
+          "description": "Determines who created or contributed into this pack.",
+          "default": "The Core Community"
+        },
+        "version": {
+          "type": "string",
+          "title": "Version",
+          "description": "Pack version. Version format: {numbers}.{numbers}.{numbers}",
+          "default": "1.0.0",
+          "pattern": "\\d+\\.\\d+\\.\\d+"
+        }
+      },
+      "required": [
+        "title",
+        "authors",
+        "version"
+      ]
+    },
+    "bot": {
+      "type": "object",
+      "title": "Bot",
+      "description": "All bot-related texts.",
+      "patternProperties": {
+        "^name$": {
+          "type": "string",
+          "title": "Bot name",
+          "default": "Bot",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "^description$": {
+          "type": "string",
+          "title": "Bot description",
+          "default": "Description",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "^[A-Za-z_]+$": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "category": {
+      "type": "object",
+      "title": "Categories",
+      "description": "Texts related to categories",
+      "patternProperties": {
+        "^[A-Za-z_]+$": {
+          "type": "object",
+          "title": "Category",
+          "description": "Category entries.",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Category name",
+              "default": "Category"
+            }
+          },
+          "patternProperties": {
+            "^[A-Za-z_]+$": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title"
+          ]
+        }
+      }
+    },
+    "command": {
+      "type": "object",
+      "title": "Commands",
+      "description": "Texts related to commands.",
+      "patternProperties": {
+        "^[A-Za-z_]+$": {
+          "type": "object",
+          "title": "Command",
+          "description": "Command entries.",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Command title"
+            },
+            "description": {
+              "type": "string",
+              "title": "Command description"
+            }
+          },
+          "patternProperties": {
+            "^[A-Za-z_]+$": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description"
+          ]
+        }
+      }
+    },
+    "embed": {
+      "type": "object",
+      "title": "Embeds",
+      "description": "Entries related to embeds.",
+      "patternProperties": {
+        "^[A-Za-z_]+$": {
+          "type": "object",
+          "title": "Embed",
+          "description": "Embed entries",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Embed title"
+            },
+            "description": {
+              "type": "string",
+              "title": "Embed description"
+            }
+          },
+          "patternProperties": {
+            "^[A-Za-z_]+": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "_languagePack",
+    "bot",
+    "category",
+    "command",
+    "embed"
+  ]
+}
