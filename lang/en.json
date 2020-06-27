@@ -2,7 +2,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.0.2"
+    "version": "1.1.0"
   },
   "bot": {
     "name": "Cognitum",
@@ -28,6 +28,16 @@
     "default": {
       "title": "Sample Title",
       "description": "Sample Description"
+    },
+    "errors": {
+      "default": {
+        "title": "Error occurred!",
+        "description": "Unexpected error occurred! Try again later or report us about this error at [this Discord guild](https://discord.gg/SbNZQMV) or [in our repository](https://github.com/thecorecity/cognitum/issues/new)."
+      },
+      "commandNotFound": {
+        "title": "Command #commandName# not found!",
+        "description": "Requested command not found! Try #prefix#help to get full commands list."
+      }
     }
   }
 }

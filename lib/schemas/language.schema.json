@@ -126,6 +126,39 @@
       "type": "object",
       "title": "Embeds",
       "description": "Entries related to embeds.",
+      "properties": {
+        "errors": {
+          "type": "object",
+          "title": "Errors",
+          "description": "Errors embeds fields.",
+          "patternProperties": {
+            "^[A-Za-z_]+$": {
+              "type": "object",
+              "title": "Error Embed",
+              "description": "Entries related to current error embed",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "Embed title"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Embed description"
+                }
+              },
+              "patternProperties": {
+                "^[A-Za-z_]+": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "description"
+              ]
+            }
+          }
+        }
+      },
       "patternProperties": {
         "^[A-Za-z_]+$": {
           "type": "object",
