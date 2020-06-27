@@ -1,3 +1,8 @@
 # Cognitum
 
-Rewritten discord bot with statistic and other utilities features.
+Rewritten discord bot with statistics and other utilities features.
+
+## Requirements
+
++ NodeJS (1.14+)
++ MariaDB
