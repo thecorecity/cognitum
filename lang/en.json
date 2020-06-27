@@ -2,15 +2,15 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "bot": {
     "name": "Cognitum",
     "description": "This is small statistics and utilities bot for Discord made by The Core Community"
   },
   "category": {
-    "core": {
-      "title": "Basic"
+    "basic": {
+      "title": "Basic commands"
     }
   },
   "command": {
