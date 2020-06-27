@@ -2,7 +2,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "bot": {
     "name": "Cognitum",
@@ -20,7 +20,8 @@
     },
     "help": {
       "title": "Help",
-      "description": "Showing all available commands and commands usage for every command."
+      "description": "Showing all available commands and commands usage for every command.",
+      "commandsList": "List of available commands"
     }
   },
   "embed": {
