@@ -1,6 +1,6 @@
 # Cognitum
 
-Rewritten discord bot with statistics and other utilities features.
+Discord bot with statistics and other utility features.
 
 ## Requirements
 
