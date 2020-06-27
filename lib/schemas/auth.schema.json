@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://files.thecore.city/schemas/cognitum/auth.schema.json",
+  "title": "Authorization file",
+  "description": "List of authorization data for bot.",
+  "type": "object",
+  "properties": {
+    "mariadb": {
+      "type": "object",
+      "title": "Database authorization data",
+      "description": "Authorization data for MariaDB database.",
+      "properties": {
+        "host": {
+          "type": "string",
+          "title": "Hostname",
+          "description": "Database hostname with port if available.",
+          "default": "localhost"
+        },
+        "database": {
+          "type": "string",
+          "title": "Database name",
+          "description": "Database name used by bot for storing data.",
+          "default": "cognitum"
+        },
+        "username": {
+          "type": "string",
+          "title": "Login",
+          "description": "Login of database user.",
+          "default": "cognitum"
+        },
+        "password": {
+          "type": "string",
+          "title": "Password",
+          "description": "Password of database user.",
+          "default": "password"
+        }
+      }
+    },
+    "discord": {
+      "type": "object",
+      "title": "Discord authorization data",
+      "description": "Data for Discord authorization",
+      "properties": {
+        "token": {
+          "type": "string",
+          "title": "Bot authorization token",
+          "default": "token"
+        }
+      }
+    }
+  }
+}
