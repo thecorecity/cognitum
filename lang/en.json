@@ -1,12 +1,32 @@
 {
-  "_languagePack": "English",
-  "_languagePackAuthors": "The Core Community",
-  "_languagePackVersion": "1.0.0",
-  "bot.description": "This is small statistics and utilities bot for Discord made by The Core Community",
-  "bot.name": "Cognitum",
-  "categoryCore.title": "Basic",
-  "commandHelp.description": "Showing all available commands and commands usage for every command.",
-  "commandHelp.title": "Help",
-  "embed.defaultTitle": "Sample Title",
-  "embed.defaultDescription": "Sample Description"
+  "_languagePack": {
+    "title": "English",
+    "authors": "The Core Community",
+    "version": "1.0.0"
+  },
+  "bot": {
+    "name": "Cognitum",
+    "description": "This is small statistics and utilities bot for Discord made by The Core Community"
+  },
+  "category": {
+    "core": {
+      "title": "Basic"
+    }
+  },
+  "command": {
+    "about": {
+      "title": "About bot",
+      "description": "Show information about bot."
+    },
+    "help": {
+      "title": "Help",
+      "description": "Showing all available commands and commands usage for every command."
+    }
+  },
+  "embed": {
+    "default": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    }
+  }
 }
