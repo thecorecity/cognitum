@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://files.thecore.city/schemas/cognitum/config.schema.json",
+  "title": "Cognitum configuration file",
+  "description": "JSON schema for Cognitum configuration file.",
+  "type": "object",
+  "properties": {
+    "cognitum": {
+      "type": "object",
+      "title": "Bot configuration section",
+      "description": "Contains basic configuration entries for bot.",
+      "properties": {
+        "debug": {
+          "type": "boolean",
+          "title": "Debugging mode",
+          "description": "Enable or disable bot debugging."
+        },
+        "prefix": {
+          "type": "string",
+          "title": "Default bot prefix",
+          "description": "Used for commands calling. May be changed by guild owners. Prefixes stored into database will not be changed.",
+          "minLength": 1,
+          "maxLength": 3
+        },
+        "embedColors": {
+          "type": "object",
+          "title": "Embed colors",
+          "description": "List of colors used in embed messages.",
+          "properties": {
+            "default": {
+              "type": "integer",
+              "title": "Default color",
+              "description": "Basic embed color used in the most embeds."
+            },
+            "error": {
+              "type": "integer",
+              "title": "Error color",
+              "description": "Embed color used in error embed messages."
+            },
+            "warning": {
+              "type": "integer",
+              "title": "Warning color",
+              "description": "Warning color used in warning embed messages."
+            }
+          }
+        },
+        "console": {
+          "type": "object",
+          "title": "Console configuration section",
+          "description": "Configuration for log output appearance etc.",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Console window title",
+              "description": "Custom message for console window."
+            },
+            "colors": {
+              "type": "object",
+              "title": "Console messages colors",
+              "description": "Colors for different console messages types.",
+              "properties": {
+                "default": {
+                  "type": "string",
+                  "title": "Default messages color"
+                },
+                "error": {
+                  "type": "string",
+                  "title": "Error messages color"
+                },
+                "warning": {
+                  "type": "string",
+                  "title": "Warning messages color"
+                },
+                "notice": {
+                  "type": "string",
+                  "title": "Notice messages color"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "database": {
+      "type": "object",
+      "title": "Database configuration section",
+      "description": "Contains configuration for database. Not includes authorization data!",
+      "properties": {
+        "pool": {
+          "type": "object",
+          "title": "Connection pool configuration",
+          "properties": {
+            "min": {
+              "type": "integer",
+              "title": "Minimal amount of connections",
+              "minimum": 0,
+              "default": 0
+            },
+            "max": {
+              "type": "integer",
+              "title": "Maximal amount of connections",
+              "default": 10
+            },
+            "acquire": {
+              "type": "integer",
+              "default": 30000
+            },
+            "idle": {
+              "type": "integer",
+              "default": 10000
+            }
+          }
+        }
+      }
+    }
+  }
+}

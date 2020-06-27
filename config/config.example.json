@@ -3,9 +3,9 @@
     "debug": false,
     "prefix": "c!",
     "embedColors": {
-      "default": "",
-      "error": "",
-      "warning": ""
+      "default": 0,
+      "error": 0,
+      "warning": 0
     },
     "console": {
       "title": "",
