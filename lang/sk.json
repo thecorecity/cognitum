@@ -1,0 +1,43 @@
+{
+  "_languagePack": {
+    "title": "Slovenský",
+    "authors": "The Core Community",
+    "version": "1.0.0"
+  },
+  "bot": {
+    "name": "Cognitum",
+    "description": "Toto je malý Discord bot so zberom štatistík a užitočné funkcie vyrobené spoločenstvom The Core."
+  },
+  "category": {
+    "basic": {
+      "title": "Základné príkazy"
+    }
+  },
+  "command": {
+    "about": {
+      "title": "O tomto bote",
+      "description": "Zobrazuje informácie o tomto botovi."
+    },
+    "help": {
+      "title": "Pomoc",
+      "description": "Uvádza všetky dostupné príkazy a príklady použitia.",
+      "commandsList": "Zoznam dostupných príkazov"
+    }
+  },
+  "embed": {
+    "default": {
+      "title": "Vzorový názov",
+      "description": "Vzorový popis."
+    },
+    "errors": {
+      "default": {
+        "title": "Došlo k chybe!",
+        "description": "Nastala neočakávaná chyba! Skúste to znova neskôr a informujte nás o tomto probléme na [našom spolku Discord](https://discord.gg/SbNZQMV) a [v úložisku GitHub](https://github.com/thecorecity/cognitum/issues/new)."
+      },
+      "commandNotFound": {
+        "title": "Príkaz `%commandName%` nenájdené!",
+        "description": "Požadovaný príkaz nenájdené! Skúste zadaním `%prefix%help` získať úplný zoznam príkazov."
+      }
+    }
+  }
+}
