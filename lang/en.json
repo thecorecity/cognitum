@@ -1,43 +1,44 @@
 {
-  "_languagePack": {
-    "title": "English",
-    "authors": "The Core Community",
-    "version": "1.1.2"
-  },
-  "bot": {
-    "name": "Cognitum",
-    "description": "This is a small Discord bot with statistics collection and useful utility features made by The Core Community."
-  },
-  "category": {
-    "basic": {
-      "title": "Basic commands"
-    }
-  },
-  "command": {
-    "about": {
-      "title": "About this bot",
-      "description": "Shows information about this bot."
-    },
-    "help": {
-      "title": "Help",
-      "description": "Lists all available commands and usage examples for them.",
-      "commandsList": "List of available commands"
-    }
-  },
-  "embed": {
-    "default": {
-      "title": "Sample title",
-      "description": "Sample description."
-    },
-    "errors": {
-      "default": {
-        "title": "An error has occurred!",
-        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new)."
-      },
-      "commandNotFound": {
-        "title": "Command `%commandName%` not found!",
-        "description": "Requested command not found! Try to enter `%prefix%help` to get a complete list of commands."
-      }
-    }
-  }
+	"$schema": "../lib/schemas/language.schema.json",
+	"_languagePack": {
+		"title": "English",
+		"authors": "The Core Community",
+		"version": "1.1.2"
+	},
+	"bot": {
+		"name": "Cognitum",
+		"description": "This is a small Discord bot with statistics collection and useful utility features made by The Core Community."
+	},
+	"category": {
+		"basic": {
+			"title": "Basic commands"
+		}
+	},
+	"command": {
+		"about": {
+			"title": "About this bot",
+			"description": "Shows information about this bot."
+		},
+		"help": {
+			"title": "Help",
+			"description": "Lists all available commands and usage examples for them.",
+			"commandsList": "List of available commands"
+		}
+	},
+	"embed": {
+		"default": {
+			"title": "Sample title",
+			"description": "Sample description."
+		},
+		"errors": {
+			"default": {
+				"title": "An error has occurred!",
+				"description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new)."
+			},
+			"commandNotFound": {
+				"title": "Command `%commandName%` not found!",
+				"description": "Requested command not found! Try to enter `%prefix%help` to get a complete list of commands."
+			}
+		}
+	}
 }
