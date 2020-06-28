@@ -1,43 +1,44 @@
 {
-  "_languagePack": {
-    "title": "Русский",
-    "authors": "The Core Community",
-    "version": "1.0.0"
-  },
-  "bot": {
-    "name": "Cognitum",
-    "description": "Это небольшой бот для Discord со сбором статистики и прочей полезной функциональностью, созданный сообществом The Core."
-  },
-  "category": {
-    "basic": {
-      "title": "Простые команды"
-    }
-  },
-  "command": {
-    "about": {
-      "title": "Об этом боте",
-      "description": "Выводит информацию об этом боте."
-    },
-    "help": {
-      "title": "Помощь",
-      "description": "Перечисляет все доступные команды и примеры для их использования.",
-      "commandsList": "Список доступных команд"
-    }
-  },
-  "embed": {
-    "default": {
-      "title": "Пример заголовка",
-      "description": "Пример описания."
-    },
-    "errors": {
-      "default": {
-        "title": "Произошла ошибка!",
-        "description": "Произошла неожиданная ошибка! Попробуйте повторить позже, или сообщите нам об этой проблеме в [нашей гильдии Discord](https://discord.gg/SbNZQMV) или [репозитории на GitHub](https://github.com/thecorecity/cognitum/issues/new)."
-      },
-      "commandNotFound": {
-        "title": "Команда `%commandName%` не найдена!",
-        "description": "Запрашиваемая команда не найдена! Попробуйте ввести `%prefix%help`, чтобы получить список всех доступных команд."
-      }
-    }
-  }
+	"$schema": "../lib/schemas/language.schema.json",
+	"_languagePack": {
+		"title": "Русский",
+		"authors": "The Core Community",
+		"version": "1.0.0"
+	},
+	"bot": {
+		"name": "Cognitum",
+		"description": "Это небольшой бот для Discord со сбором статистики и прочей полезной функциональностью, созданный сообществом The Core."
+	},
+	"category": {
+		"basic": {
+			"title": "Простые команды"
+		}
+	},
+	"command": {
+		"about": {
+			"title": "Об этом боте",
+			"description": "Выводит информацию об этом боте."
+		},
+		"help": {
+			"title": "Помощь",
+			"description": "Перечисляет все доступные команды и примеры для их использования.",
+			"commandsList": "Список доступных команд"
+		}
+	},
+	"embed": {
+		"default": {
+			"title": "Пример заголовка",
+			"description": "Пример описания."
+		},
+		"errors": {
+			"default": {
+				"title": "Произошла ошибка!",
+				"description": "Произошла неожиданная ошибка! Попробуйте повторить позже, или сообщите нам об этой проблеме в [нашей гильдии Discord](https://discord.gg/SbNZQMV) или [репозитории на GitHub](https://github.com/thecorecity/cognitum/issues/new)."
+			},
+			"commandNotFound": {
+				"title": "Команда `%commandName%` не найдена!",
+				"description": "Запрашиваемая команда не найдена! Попробуйте ввести `%prefix%help`, чтобы получить список всех доступных команд."
+			}
+		}
+	}
 }

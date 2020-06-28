@@ -1,28 +1,29 @@
 {
-  "cognitum": {
-    "debug": false,
-    "prefix": "c!",
-    "embedColors": {
-      "default": 0,
-      "error": 0,
-      "warning": 0
-    },
-    "console": {
-      "title": "",
-      "colors": {
-        "default": "",
-        "error": "",
-        "warning": "",
-        "notice": ""
-      }
-    }
-  },
-  "database": {
-    "pool": {
-      "min": 0,
-      "max": 10,
-      "acquire": 30000,
-      "idle": 10000
-    }
-  }
+	"$schema": "../lib/schemas/config.schema.json",
+	"cognitum": {
+		"debug": false,
+		"prefix": "c!",
+		"embedColors": {
+			"default": 0,
+			"error": 0,
+			"warning": 0
+		},
+		"console": {
+			"title": "",
+			"colors": {
+				"default": "",
+				"error": "",
+				"warning": "",
+				"notice": ""
+			}
+		}
+	},
+	"database": {
+		"pool": {
+			"min": 0,
+			"max": 10,
+			"acquire": 30000,
+			"idle": 10000
+		}
+	}
 }
