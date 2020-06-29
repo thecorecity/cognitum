@@ -9,8 +9,6 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
-max_line_length = 120
-ij_javascript_wrap_comments = true
 
 [package.json]
 indent_style = space
