@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.1.2"
+    "version": "1.2.1"
   },
   "bot": {
     "name": "Cognitum",
@@ -23,6 +23,12 @@
       "title": "Help",
       "description": "Lists all available commands and usage examples for them.",
       "commandsList": "List of available commands"
+    },
+    "ping": {
+      "title": "Ping",
+      "description": "Get current public bot statistics.",
+      "embedTitle": "Pong!",
+      "embedDescription": "**Uptime:** %uptime%\n**Connection:** %discordPing%"
     }
   },
   "embed": {
