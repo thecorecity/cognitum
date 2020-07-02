@@ -3,3 +3,6 @@ auth.json
 
 # Configuration file
 config.json
+
+# Database configuration file
+db.json
