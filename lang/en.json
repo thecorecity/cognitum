@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.2.0"
+    "version": "1.2.1"
   },
   "bot": {
     "name": "Cognitum",
@@ -28,7 +28,7 @@
       "title": "Ping",
       "description": "Get current public bot statistics.",
       "embedTitle": "Pong!",
-      "embedDescription": "**Uptime:** %uptime%\n**WebSocket HeartBeat:** %discordPing%"
+      "embedDescription": "**Uptime:** %uptime%\n**Connection:** %discordPing%"
     }
   },
   "embed": {
