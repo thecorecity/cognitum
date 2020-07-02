@@ -31,5 +31,9 @@
     "lodash": "^4.17.15",
     "mariadb": "^2.4.0",
     "sequelize": "^5.21.11"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.3.1"
   }
 }
