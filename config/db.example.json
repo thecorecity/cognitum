@@ -1,0 +1,10 @@
+{
+  "$schema": "../lib/schemas/db.schema.json",
+  "dbtype": "mariadb",
+  "mariadb": {
+    "host": "localhost",
+    "database": "cognitum",
+    "username": "root",
+    "password": "root"
+  }
+}

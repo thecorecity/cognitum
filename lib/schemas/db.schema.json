@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://files.thecore.city/schemas/cognitum/db.schema.json",
+  "title": "Database configuration file",
+  "description": "JSON schema for database configuration file.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "dbtype": {
+      "type": "string",
+      "title": "Database type",
+      "description": "Choosing one of the available database types. \"inmemory\" option used for debugging only.",
+      "enum": [
+        "inmemory",
+        "mariadb"
+      ],
+      "default": "inmemory"
+    },
+    "mariadb": {
+      "type": "object",
+      "title": "MariaDB",
+      "description": "Connection settings for MariaDB option",
+      "properties": {
+        "host": {
+          "type": "string",
+          "title": "host address",
+          "default": "localhost"
+        },
+        "database": {
+          "type": "string",
+          "title": "Name of database",
+          "default": "cognitum"
+        },
+        "username": {
+          "type": "string",
+          "title": "Username used to connect to the database",
+          "default": "root"
+        },
+        "password": {
+          "type": "string",
+          "title": "Password used to connect to the database",
+          "default": "root"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "host",
+        "database",
+        "username",
+        "password"
+      ]
+    },
+    "pool": {
+      "type": "object",
+      "title": "Database connection pool",
+      "description": "Sequelize ORM connection pool configuration. Optional.",
+      "properties": {
+        "max": {
+          "type": "number",
+          "description": "Maximum number of connection in pool",
+          "default": 5
+        },
+        "min": {
+          "type": "number",
+          "description": "Minimum number of connection in pool",
+          "default": 0
+        },
+        "idle": {
+          "type": "number",
+          "description": "The maximum time, in milliseconds, that a connection can be idle before being released",
+          "default": 10000
+        },
+        "acquire": {
+          "type": "number",
+          "description": "The maximum time, in milliseconds, that pool will try to get connection before throwing error",
+          "default": 60000
+        },
+        "evict": {
+          "type": "number",
+          "description": "The time interval, in milliseconds, after which sequelize-pool will remove idle connections.",
+          "default": 1000
+        }
+      },
+      "additionalProperties": false
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "dbtype"
+  ]
+}

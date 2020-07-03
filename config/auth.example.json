@@ -1,11 +1,5 @@
 {
   "$schema": "../lib/schemas/auth.schema.json",
-  "mariadb": {
-    "host": "",
-    "database": "",
-    "username": "",
-    "password": ""
-  },
   "discord": {
     "token": ""
   }
