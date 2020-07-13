@@ -27,13 +27,6 @@
           "description": "Pack version. Version format: {numbers}.{numbers}.{numbers}",
           "default": "1.0.0",
           "pattern": "\\d+\\.\\d+\\.\\d+"
-        },
-        "upstream": {
-          "type": "string",
-          "title": "Upstream pack version",
-          "description": "Version of upstream language pack implemented by this pack.",
-          "default": "1.0.0",
-          "pattern": "\\d+\\.\\d+\\.\\d+"
         }
       },
       "required": [
