@@ -1,5 +1,5 @@
 {
-  "$schema": "../lib/schemas/config.schema.json",
+  "$schema": "https://files.thecore.city/schemas/cognitum/config.schema.json",
   "cognitum": {
     "debug": false,
     "prefix": "c!",
@@ -16,14 +16,6 @@
         "warning": "",
         "notice": ""
       }
-    }
-  },
-  "database": {
-    "pool": {
-      "min": 0,
-      "max": 10,
-      "acquire": 30000,
-      "idle": 10000
     }
   }
 }

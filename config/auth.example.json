@@ -1,6 +1,0 @@
-{
-  "$schema": "../lib/schemas/auth.schema.json",
-  "discord": {
-    "token": ""
-  }
-}
