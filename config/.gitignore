@@ -1,8 +1,8 @@
 # This is authorization file required for database and other things
 /auth.json
 
-# Configuration file
-/config.json
+# Preferences file
+/preferences.json
 
 # Database configuration file
 /db.json
