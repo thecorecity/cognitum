@@ -82,7 +82,10 @@
           },
           "patternProperties": {
             "^[A-Za-z_]+$": {
-              "type": "string"
+              "type": [
+                "string",
+                "object"
+              ]
             }
           },
           "required": [
@@ -112,7 +115,10 @@
           },
           "patternProperties": {
             "^[A-Za-z_]+$": {
-              "type": "string"
+              "type": [
+                "string",
+                "object"
+              ]
             }
           },
           "required": [
@@ -148,7 +154,10 @@
               },
               "patternProperties": {
                 "^[A-Za-z_]+": {
-                  "type": "string"
+                  "type": [
+                    "string",
+                    "object"
+                  ]
                 }
               },
               "required": [
@@ -176,7 +185,10 @@
           },
           "patternProperties": {
             "^[A-Za-z_]+": {
-              "type": "string"
+              "type": [
+                "string",
+                "object"
+              ]
             }
           },
           "required": [
