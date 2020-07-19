@@ -7,6 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
+    "migrate": "npx sequelize db:migrate --env \"production\"",
+    "migrate-dev": "npx suequelize db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
