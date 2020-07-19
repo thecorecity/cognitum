@@ -1,0 +1,11 @@
+# This file itselves
+/.confignore
+
+# Gitignore file
+/.gitignore
+
+# Default configurations folder
+/.default
+
+# Sequelize configuration file
+/sequelize.js
