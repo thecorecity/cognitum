@@ -1,11 +1,5 @@
-# This file itselves
-/.confignore
-
-# Gitignore file
-/.gitignore
-
-# Default configurations folder
-/.default
+# Ignore everytnig that starting with a dot
+/.*
 
 # Sequelize configuration file
 /sequelize.js
