@@ -1,5 +1,5 @@
 {
-  "$schema": "../lib/schemas/db.schema.json",
+  "$schema": "https://files.thecore.city/schemas/cognitum/db.schema.json",
   "dbtype": "mariadb",
   "mariadb": {
     "host": "localhost",

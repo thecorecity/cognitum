@@ -1,14 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://files.thecore.city/schemas/cognitum/config.schema.json",
-  "title": "Cognitum configuration file",
-  "description": "JSON schema for Cognitum configuration file.",
+  "$id": "https://files.thecore.city/schemas/cognitum/preferences.schema.json",
+  "title": "Cognitum preferences file",
+  "description": "JSON schema for Cognitum preferences.",
   "type": "object",
   "properties": {
     "cognitum": {
       "type": "object",
-      "title": "Bot configuration section",
-      "description": "Contains basic configuration entries for bot.",
+      "title": "Bot preference section",
+      "description": "Contains preferences entries for bot.",
       "properties": {
         "debug": {
           "type": "boolean",
@@ -46,8 +46,8 @@
         },
         "console": {
           "type": "object",
-          "title": "Console configuration section",
-          "description": "Configuration for log output appearance etc.",
+          "title": "Console preference section",
+          "description": "Preferences for log output appearance etc.",
           "properties": {
             "title": {
               "type": "string",
@@ -76,38 +76,6 @@
                   "title": "Notice messages color"
                 }
               }
-            }
-          }
-        }
-      }
-    },
-    "database": {
-      "type": "object",
-      "title": "Database configuration section",
-      "description": "Contains configuration for database. Not includes authorization data!",
-      "properties": {
-        "pool": {
-          "type": "object",
-          "title": "Connection pool configuration",
-          "properties": {
-            "min": {
-              "type": "integer",
-              "title": "Minimal amount of connections",
-              "minimum": 0,
-              "default": 0
-            },
-            "max": {
-              "type": "integer",
-              "title": "Maximal amount of connections",
-              "default": 10
-            },
-            "acquire": {
-              "type": "integer",
-              "default": 30000
-            },
-            "idle": {
-              "type": "integer",
-              "default": 10000
             }
           }
         }
