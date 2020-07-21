@@ -40,6 +40,10 @@
         "title": "Prefix changed!",
         "description": "Prefix for current guild successfully changed to `%prefix%`!",
         "descriptionDefault": "Prefix for current guild successfully reset to default. Now it's `%prefix%`."
+      },
+      "error": {
+        "tooLongPrefix": "This prefix is too long! Maximal possible size for prefix: %maxSize%.",
+        "incorrectArgumentsAmount": "Incorrect amount of arguments passed (%passed%, %expected% arguments expected)."
       }
     }
   },
@@ -56,6 +60,10 @@
       "commandNotFound": {
         "title": "Command `%commandName%` not found!",
         "description": "Requested command not found! Try to enter `%prefix%help` to get a complete list of commands."
+      },
+      "invalidArgumentError": {
+        "title": "Invalid arguments error",
+        "description": "Arguments passed to this command is invalid!"
       }
     }
   }
