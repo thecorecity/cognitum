@@ -12,6 +12,9 @@
   "category": {
     "basic": {
       "title": "Basic commands"
+    },
+    "guild": {
+      "title": "Guild"
     }
   },
   "command": {
