@@ -8,7 +8,9 @@
   },
   "scripts": {
     "migrate": "npx sequelize db:migrate --env \"production\"",
-    "migrate-dev": "npx sequelize db:migrate",
+    "init-dev": "npm run init-dev:devdb && npm run init-dev:migrate",
+    "init-dev:migrate": "npx sequelize db:migrate",
+    "init-dev:devdb": "node ./init/devdb-init.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

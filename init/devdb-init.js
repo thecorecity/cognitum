@@ -2,7 +2,7 @@
 const mariadb = require("mariadb");
 const readlineSync = require("readline-sync");
 
-console.log("Creating \"cogntum_dev\" database and \"cognitum_dev\" user with \"cognitum_dev\" password...");
+console.log("Creating \"cogntum_dev\" database and \"cognitum_dev\" user with \"cognitum_dev\" password if it not exists.");
 let username = readlineSync.question("mariadb root username: ");
 let password = readlineSync.question("mariadb root password: ", { hideEchoBack: true });
 
