@@ -68,6 +68,10 @@
       "callerPermissionError": {
         "title": "Access denied!",
         "description": "You don't have required permissions to call this command! List of required permissions: %permissionsList%."
+      },
+      "botPermissionError": {
+        "title": "Missing permissions!",
+        "description": "Bot missing one of the following permissions: %permissionsList%. Contact your guild administrators to fix it."
       }
     }
   },
