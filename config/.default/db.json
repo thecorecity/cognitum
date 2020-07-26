@@ -1,10 +1,4 @@
 {
   "$schema": "https://files.thecore.city/schemas/cognitum/db.schema.json",
-  "dbtype": "mariadb",
-  "mariadb": {
-    "host": "localhost",
-    "database": "cognitum",
-    "username": "root",
-    "password": "root"
-  }
+  "dbtype": "dev"
 }
