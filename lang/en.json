@@ -40,10 +40,6 @@
         "title": "Prefix changed!",
         "description": "Prefix for current guild successfully changed to `%prefix%`!",
         "descriptionDefault": "Prefix for current guild successfully reset to default. Now it's `%prefix%`."
-      },
-      "error": {
-        "tooLongPrefix": "This prefix is too long! Maximal possible size for prefix: %maxSize%.",
-        "incorrectArgumentsAmount": "Incorrect amount of arguments passed (%passed%, %expected% arguments expected)."
       }
     }
   },
@@ -63,7 +59,10 @@
       },
       "invalidArgumentError": {
         "title": "Invalid arguments error",
-        "description": "Arguments passed to this command is invalid!"
+        "description": "Arguments passed to this command is invalid!\n__Details:__ %details%",
+        "min": "This command requires at least %minValue% argument(s)!",
+        "max": "This command requires less or equal %maxValue% argument(s)!",
+        "length": "Argument #%argumentIndex% must have length `%requiredLength%`!"
       },
       "callerPermissionError": {
         "title": "Access denied!",
