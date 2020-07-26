@@ -9,12 +9,12 @@
     "dbtype": {
       "type": "string",
       "title": "Database type",
-      "description": "Choosing one of the available database types. \"inmemory\" option used for debugging only.",
+      "description": "Choosing one of the available database types. \"dev\" option used for development only.",
       "enum": [
-        "inmemory",
+        "dev",
         "mariadb"
       ],
-      "default": "inmemory"
+      "default": "dev"
     },
     "mariadb": {
       "type": "object",
