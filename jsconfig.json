@@ -1,0 +1,9 @@
+{
+  "include": [
+    "lib/**/*.js"
+  ],
+  "typeAcquisition": {
+    "enable": true,
+    "include": ["sequelize"]
+  }
+}
