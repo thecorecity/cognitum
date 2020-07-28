@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.3.0"
+    "version": "1.4.0"
   },
   "bot": {
     "name": "Cognitum",
@@ -25,7 +25,12 @@
     "help": {
       "title": "Help",
       "description": "Lists all available commands and usage examples for them.",
-      "commandsList": "List of available commands"
+      "commandsList": "List of available commands",
+      "usageTitle": "Command usage:",
+      "examplesTitle": "Usage examples:",
+      "exampleNoParams": "`help` — Get list of all commands;",
+      "exampleWithParams": "`help prefix` — Get information about `prefix` command.",
+      "aliasesTitle": "Command aliases:"
     },
     "ping": {
       "title": "Ping",
