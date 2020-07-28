@@ -47,7 +47,7 @@
         "descriptionDefault": "Prefix for current guild successfully reset to default. Now it's `%prefix%`."
       },
       "exampleReset": "`prefix` — Reset prefix to default global prefix;",
-      "exampleSet": "`prefix >>` — Set local guild prefix to `>>`"
+      "exampleSet": "`prefix >>` — Set local guild prefix to `>>`."
     }
   },
   "embed": {
