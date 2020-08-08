@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.4.0"
+    "version": "1.5.0"
   },
   "bot": {
     "name": "Cognitum",
@@ -48,6 +48,19 @@
       },
       "exampleReset": "`prefix` — Reset prefix to default global prefix;",
       "exampleSet": "`prefix >>` — Set local guild prefix to `>>`."
+    },
+    "log": {
+      "title": "Logs settings",
+      "description": "For server administrators only! Gives admin ability to turn on and manage logging feature.\n\n__Public logs__:\n`join` New members join;\n`left` Members leaving;\n`rename` Nickname changes;\n`ban` Member bans (requires Audit Log permission);\n`kick` Member kicks (requires Audit Log permission).\n\n__Private logs__:\n`msg_delete` Message delete;\n`msg_image` Message attachments logging;\n`msg_update` Message updates.\n\nSome of this features available only if bot have access to server's Audit Log.",
+      "example": {
+        "enable": "`log enable` — Enable logging;",
+        "disable": "`log disable` — Disable logging;",
+        "setPublicChannel": "`log public #moderation` — Set public channel to #moderation;",
+        "resetPrivateChannel": "`log private` — Reset private channel;",
+        "enableFeature": "`log enable rename` — Enable nickname changes logging;",
+        "disableFeature": "`log disable msg_delete` — Disable message deleting logging;",
+        "enableAll": "`log enable all` — Enable all logging features."
+      }
     }
   },
   "embed": {
