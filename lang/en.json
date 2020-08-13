@@ -60,6 +60,32 @@
         "enableFeature": "`log enable rename` — Enable nickname changes logging;",
         "disableFeature": "`log disable msg_delete` — Disable message deleting logging;",
         "enableAll": "`log enable all` — Enable all logging features."
+      },
+      "settingsTitle": "Logs settings for %guildName%",
+      "settingsEvents": "Events:",
+      "state": {
+        "enabled": "Logging enabled",
+        "disabled": "Logging disabled"
+      },
+      "channel": {
+        "public": {
+          "enabled": "Public channel: <#%channelId%>",
+          "disabled": "Public channel is not set"
+        },
+        "private": {
+          "enabled": "Private channel: <#%channelId%>",
+          "disabled": "Private channel is not set"
+        }
+      },
+      "events": {
+        "join": "`join` Members join",
+        "left": "`left` Members leave",
+        "rename": "`rename` Nickname changes",
+        "kick": "`kick` Members kick",
+        "ban": "`ban` Members ban",
+        "msg_delete": "`msg_delete` Deleted messages",
+        "msg_image": "`msg_image` Attachments",
+        "msg_update": "`msg_update` Changed messages"
       }
     }
   },
