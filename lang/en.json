@@ -108,7 +108,8 @@
         "description": "Arguments passed to this command is invalid!\n__Details:__ %details%",
         "min": "This command requires at least %minValue% argument(s)!",
         "max": "This command requires less or equal %maxValue% argument(s)!",
-        "length": "Argument #%argumentIndex% must have length `%requiredLength%`!"
+        "length": "Argument #%argumentIndex% must have length `%requiredLength%`!",
+        "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed."
       },
       "callerPermissionError": {
         "title": "Access denied!",
