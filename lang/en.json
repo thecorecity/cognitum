@@ -90,6 +90,16 @@
       "eventChanged":  {
         "title": "Event settings update",
         "description": "Successfully changed setting for event!\n\n%feature%."
+      },
+      "toggle": {
+        "on": {
+          "title": "Logging enabled",
+          "description": "Logging feature successfully enabled! If logging still not working then check for bot permissions or channels availability."
+        },
+        "off": {
+          "title": "Logging disabled",
+          "description": "Logging feature disabled."
+        }
       }
     }
   },
