@@ -86,6 +86,10 @@
         "msg_delete": "`msg_delete` Deleted messages",
         "msg_image": "`msg_image` Attachments",
         "msg_update": "`msg_update` Changed messages"
+      },
+      "eventChanged":  {
+        "title": "Event settings update",
+        "description": "Successfully changed setting for event!\n\n%feature%."
       }
     }
   },
