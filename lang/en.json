@@ -101,7 +101,7 @@
     "errors": {
       "default": {
         "title": "An error has occurred!",
-        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new)."
+        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new).\n__Details:__ %errorMessage%\n"
       },
       "commandNotFound": {
         "title": "Command `%commandName%` not found!",
