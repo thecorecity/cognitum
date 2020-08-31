@@ -101,6 +101,12 @@
           "description": "Logging feature disabled."
         }
       }
+    },
+    "merge": {
+      "title": "Merge voice channel",
+      "description": "Move members from voice channel you're connected to, to another one. This command can be casted only if caller and bot have Move Members permission.",
+      "move": "`merge 415190108577464333` — Move all members from your current voice channel to channel with following ID.",
+      "movingCompleted": ":white_check_mark: Moved members from %currentChannel% to %targetChannel%!"
     }
   },
   "embed": {
