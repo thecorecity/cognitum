@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.4.0"
+    "version": "1.5.0"
   },
   "bot": {
     "name": "Cognitum",
@@ -48,6 +48,83 @@
       },
       "exampleReset": "`prefix` — Reset prefix to default global prefix;",
       "exampleSet": "`prefix >>` — Set local guild prefix to `>>`."
+    },
+    "log": {
+      "title": "Logs settings",
+      "description": "For server administrators only! Gives admin ability to turn on and manage logging feature.\n\n__Public logs__:\n`join` New members join;\n`left` Members leaving;\n`rename` Nickname changes;\n`ban` Member bans (requires Audit Log permission);\n`kick` Member kicks (requires Audit Log permission).\n\n__Private logs__:\n`msg_delete` Message delete;\n`msg_image` Message attachments logging;\n`msg_update` Message updates.\n\nSome of this features available only if bot have access to server's Audit Log.",
+      "example": {
+        "enable": "`log enable` — Enable logging;",
+        "disable": "`log disable` — Disable logging;",
+        "setPublicChannel": "`log public #moderation` — Set public channel to #moderation;",
+        "resetPrivateChannel": "`log private` — Reset private channel;",
+        "enableFeature": "`log enable rename` — Enable nickname changes logging;",
+        "disableFeature": "`log disable msg_delete` — Disable message deleting logging;",
+        "enableAll": "`log enable all` — Enable all logging features."
+      },
+      "settingsTitle": "Logs settings for %guildName%",
+      "settingsEvents": "Events:",
+      "state": {
+        "enabled": "Logging enabled",
+        "disabled": "Logging disabled"
+      },
+      "channel": {
+        "public": {
+          "enabled": "Public channel: <#%channelId%>",
+          "disabled": "Public channel is not set"
+        },
+        "private": {
+          "enabled": "Private channel: <#%channelId%>",
+          "disabled": "Private channel is not set"
+        }
+      },
+      "events": {
+        "join": "`join` Members join",
+        "left": "`left` Members leave",
+        "rename": "`rename` Nickname changes",
+        "kick": "`kick` Members kick",
+        "ban": "`ban` Members ban",
+        "msg_delete": "`msg_delete` Deleted messages",
+        "msg_image": "`msg_image` Attachments",
+        "msg_update": "`msg_update` Changed messages"
+      },
+      "eventChanged":  {
+        "title": "Event settings update",
+        "description": "Successfully changed setting for event!\n\n%feature%."
+      },
+      "toggle": {
+        "on": {
+          "title": "Logging enabled",
+          "description": "Logging feature successfully enabled! If logging still not working then check for bot permissions or channels availability."
+        },
+        "off": {
+          "title": "Logging disabled",
+          "description": "Logging feature disabled."
+        }
+      }
+    },
+    "merge": {
+      "title": "Merge voice channel",
+      "description": "Move members from voice channel you're connected to, to another one. This command can be casted only if caller and bot have Move Members permission.",
+      "move": "`merge 415190108577464333` — Move all members from your current voice channel to channel with following ID.",
+      "movingCompleted": ":white_check_mark: Moved members from %currentChannel% to %targetChannel%!"
+    },
+    "welcome": {
+      "title": "Welcome feature managing",
+      "description": "Command for managing settings for welcome feature. Only admins can change settings.",
+      "featureToggle": {
+        "on": {
+          "title": "Welcome feature enabled",
+          "description": "Welcome feature has been enabled! Check if manager and verified roles is set up correctly and welcome channel is set too."
+        },
+        "off": {
+          "title": "Welcome feature disabled",
+          "description": "Welcome feature disabled. Roles and channel setting will stay, but commands for welcome managers will not work."
+        }
+      },
+      "managerUpdated": {
+        "title": "Welcome feature: Manager role changed",
+        "description": "Manager role successfully changed to <@!%roleID%>. Members marked by this role will be allow now to verify newcomers."
+      }
     }
   },
   "embed": {
@@ -58,7 +135,7 @@
     "errors": {
       "default": {
         "title": "An error has occurred!",
-        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new)."
+        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new).\n__Details:__ %errorMessage%\n"
       },
       "commandNotFound": {
         "title": "Command `%commandName%` not found!",
@@ -69,7 +146,8 @@
         "description": "Arguments passed to this command is invalid!\n__Details:__ %details%",
         "min": "This command requires at least %minValue% argument(s)!",
         "max": "This command requires less or equal %maxValue% argument(s)!",
-        "length": "Argument #%argumentIndex% must have length `%requiredLength%`!"
+        "length": "Argument #%argumentIndex% must have length `%requiredLength%`!",
+        "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed."
       },
       "callerPermissionError": {
         "title": "Access denied!",
