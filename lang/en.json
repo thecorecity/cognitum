@@ -15,6 +15,9 @@
     },
     "guild": {
       "title": "Guild"
+    },
+    "utils": {
+      "title": "Utilities"
     }
   },
   "command": {
