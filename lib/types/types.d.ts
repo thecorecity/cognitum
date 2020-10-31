@@ -9,6 +9,7 @@ declare namespace Database {
 		Document,
 		MessageStatistics,
 		VoiceStatistics,
+		Task
 	} from "/lib/classes/Database.js";
 
 	public type GuildMember = GuildMember;
@@ -18,6 +19,7 @@ declare namespace Database {
 	public type Document = Document;
 	public type MessageStatistics = MessageStatistics;
 	public type VoiceStatistics = VoiceStatistics;
+	public type Task = Task;
 }
 
 declare namespace Cognitum {
@@ -93,5 +95,12 @@ declare namespace Cognitum {
 		 * List of arguments passed to this command.
 		 */
 		args?: string[];
+	}
+
+	public interface TimeStringParseResult {
+		days: number | null;
+		hours: number | null;
+		minutes: number | null;
+		seconds: number | null;
 	}
 }
