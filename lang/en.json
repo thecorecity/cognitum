@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "bot": {
     "name": "Cognitum",
@@ -159,6 +159,14 @@
       "botPermissionError": {
         "title": "Missing permissions!",
         "description": "Bot missing one of the following permissions: %permissionsList%. Contact your guild administrators to fix it."
+      }
+    },
+    "tasks": {
+      "reminder": {
+        "title": "Reminder!",
+        "description": "Remind you: %reminderMessage%",
+        "descriptionEmpty": "Remind you about something!",
+        "footer": "Cognitum Reminder 2000"
       }
     }
   },
