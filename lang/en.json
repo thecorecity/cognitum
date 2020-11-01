@@ -128,6 +128,15 @@
         "title": "Welcome feature: Manager role changed",
         "description": "Manager role successfully changed to <@!%roleID%>. Members marked by this role will be allow now to verify newcomers."
       }
+    },
+    "remind": {
+      "title": "Reminder",
+      "description": "Command for making reminder for yourself in some time.\n**Time string format:** `<days>d<hours>h<minutes>m<seconds>s`\n**Maximal time:** 29 days 23 hours 59 minutes 59 seconds",
+      "example": {
+        "simple": "`remind 10m` — Remind without message after 10 minutes;",
+        "message": "`remind Check for my mail 4h30m` — Remind `Check for my mail` in 4 hours and 30 minutes."
+      },
+      "successfull": ":white_check_mark: I'll remind you %message% in %time%."
     }
   },
   "embed": {
