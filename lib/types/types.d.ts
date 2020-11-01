@@ -23,6 +23,8 @@ declare namespace Database {
 }
 
 declare namespace Cognitum {
+	import Bot from "../classes/Bot.js";
+
 	/**
 	 * Available types of log. This types will be used in future for better styling of logging and enabling different
 	 * logs channels to show in console prompt.
@@ -102,5 +104,9 @@ declare namespace Cognitum {
 		hours: number | null;
 		minutes: number | null;
 		seconds: number | null;
+	}
+
+	public interface TaskQueueRunOptions {
+		discordClient: Bot;
 	}
 }
