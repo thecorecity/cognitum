@@ -136,7 +136,7 @@
         "simple": "`remind 10m` — Remind without message after 10 minutes;",
         "message": "`remind Check for my mail 4h30m` — Remind `Check for my mail` in 4 hours and 30 minutes."
       },
-      "successfull": ":white_check_mark: I'll remind you %message% in %time%."
+      "successful": ":white_check_mark: I'll remind you %message% in %time%."
     }
   },
   "embed": {
