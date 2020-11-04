@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "bot": {
     "name": "Cognitum",
@@ -15,6 +15,9 @@
     },
     "guild": {
       "title": "Guild"
+    },
+    "utils": {
+      "title": "Utilities"
     }
   },
   "command": {
@@ -125,6 +128,15 @@
         "title": "Welcome feature: Manager role changed",
         "description": "Manager role successfully changed to <@!%roleID%>. Members marked by this role will be allow now to verify newcomers."
       }
+    },
+    "remind": {
+      "title": "Reminder",
+      "description": "Command for making reminder for yourself in some time.\n**Time string format:** `<days>`d`<hours>`h`<minutes>`m`<seconds>`s\n**Maximal time:** 29 days 23 hours 59 minutes 59 seconds",
+      "example": {
+        "simple": "`remind 10m` — Remind without message after 10 minutes;",
+        "message": "`remind Check for my mail 4h30m` — Remind `Check for my mail` in 4 hours and 30 minutes."
+      },
+      "successful": ":white_check_mark: I'll remind you %message% in %time%."
     }
   },
   "embed": {
@@ -156,6 +168,14 @@
       "botPermissionError": {
         "title": "Missing permissions!",
         "description": "Bot missing one of the following permissions: %permissionsList%. Contact your guild administrators to fix it."
+      }
+    },
+    "tasks": {
+      "reminder": {
+        "title": "Reminder!",
+        "description": "Remind you: %reminderMessage%",
+        "descriptionEmpty": "Remind you about something!",
+        "footer": "Cognitum Reminder 2000"
       }
     }
   },
