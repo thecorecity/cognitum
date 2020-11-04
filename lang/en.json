@@ -23,7 +23,11 @@
   "command": {
     "about": {
       "title": "About this bot",
-      "description": "Shows information about this bot."
+      "description": "Shows information about this bot.",
+      "links": {
+        "title": "Links:",
+        "description": "[Discord guild](https://discord.gg/3S9UEm6)\n[GitHub repository](https://github.com/thecorecity/cognitum)\n[Report problem or make a suggestion](https://github.com/thecorecity/cognitum/issues)"
+      }
     },
     "help": {
       "title": "Help",
@@ -137,6 +141,13 @@
         "message": "`remind Check for my mail 4h30m` — Remind `Check for my mail` in 4 hours and 30 minutes."
       },
       "successful": ":white_check_mark: I'll remind you %message% in %time%."
+    },
+    "lang": {
+      "title": "Localization",
+      "description": "Command for switching language.",
+      "listTitle": "Available languages",
+      "changedTitle": "Language changed!",
+      "changedDescription": "Successfully changed language to %languageName% for current guild!"
     }
   },
   "embed": {
