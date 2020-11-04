@@ -137,6 +137,11 @@
         "message": "`remind Check for my mail 4h30m` — Remind `Check for my mail` in 4 hours and 30 minutes."
       },
       "successful": ":white_check_mark: I'll remind you %message% in %time%."
+    },
+    "lang": {
+      "title": "Localization",
+      "description": "Command for switching language.",
+      "listTitle": "Available languages"
     }
   },
   "embed": {
