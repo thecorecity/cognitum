@@ -145,7 +145,9 @@
     "lang": {
       "title": "Localization",
       "description": "Command for switching language.",
-      "listTitle": "Available languages"
+      "listTitle": "Available languages",
+      "changedTitle": "Language changed!",
+      "changedDescription": "Successfully changed language to %languageName% for current guild!"
     }
   },
   "embed": {
