@@ -2,24 +2,24 @@ declare type PermissionString = import("discord.js").PermissionString;
 
 declare namespace Database {
 	import {
-		GuildMember,
-		GuildChannel,
-		User,
-		Guild,
-		Document,
-		MessageStatistics,
-		VoiceStatistics,
-		Task
+		GuildMemberModel,
+		GuildChannelModel,
+		UserModel,
+		GuildModel,
+		DocumentModel,
+		MessageStatisticsModel,
+		VoiceStatisticsModel,
+		TaskModel
 	} from "/lib/classes/Database.js";
 
-	public type GuildMember = GuildMember;
-	public type GuildChannel = GuildChannel;
-	public type User = User;
-	public type Guild = Guild;
-	public type Document = Document;
-	public type MessageStatistics = MessageStatistics;
-	public type VoiceStatistics = VoiceStatistics;
-	public type Task = Task;
+	public type GuildMemberModel = GuildMemberModel;
+	public type GuildChannelModel = GuildChannelModel;
+	public type UserModel = UserModel;
+	public type GuildModel = GuildModel;
+	public type DocumentModel = DocumentModel;
+	public type MessageStatisticsModel = MessageStatisticsModel;
+	public type VoiceStatisticsModel = VoiceStatisticsModel;
+	public type TaskModel = TaskModel;
 }
 
 declare namespace Cognitum {
@@ -38,10 +38,10 @@ declare namespace Cognitum {
 	public type ArgumentsLengthValidationMode = "max" | "exact";
 
 	public interface ContextModelsInstances {
-		guild: Database.Guild;
-		channel: Database.GuildChannel;
-		member: Database.GuildMember;
-		user: Database.User;
+		guild: Database.GuildModel;
+		channel: Database.GuildChannelModel;
+		member: Database.GuildMemberModel;
+		user: Database.UserModel;
 	}
 
 	public interface ContextValidatorOptions {
