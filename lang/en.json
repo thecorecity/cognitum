@@ -3,7 +3,8 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "0.6.0"
+    "version": "0.6.0",
+    "dateLocale": "en-US"
   },
   "bot": {
     "name": "Cognitum",
@@ -15,6 +16,9 @@
     },
     "guild": {
       "title": "Guild"
+    },
+    "stats": {
+      "title": "Stats"
     },
     "utils": {
       "title": "Utilities"
@@ -121,6 +125,19 @@
       },
       "exampleReset": "`prefix` — Reset prefix to default global prefix;",
       "exampleSet": "`prefix >>` — Set local guild prefix to `>>`."
+    },
+    "profile": {
+      "title": "Member profile",
+      "description": "Shows information about current member from Discord and internal bot database.",
+      "botTitle": "Bot: %username%",
+      "memberTitle": "Member: %username%",
+      "parts": {
+        "bot": "Bot",
+        "owner": "Guild Owner",
+        "admin": "Guild Administrator",
+        "lastJoined": "**Last join:** %joinDate%",
+        "accountCreated": "**Registered:** %createDate%"
+      }
     },
     "remind": {
       "title": "Reminder",

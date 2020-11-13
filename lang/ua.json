@@ -3,7 +3,8 @@
   "_languagePack": {
     "title": "Українська",
     "authors": "The Core Community",
-    "version": "0.1.2"
+    "version": "0.1.2",
+    "dateLocale": "ua-UA"
   },
   "bot": {
     "name": "Cognitum",

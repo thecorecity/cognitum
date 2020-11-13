@@ -3,7 +3,8 @@
   "_languagePack": {
     "title": "Slovenský",
     "authors": "The Core Community",
-    "version": "0.1.2"
+    "version": "0.1.2",
+    "dateLocale": "sk-SK"
   },
   "bot": {
     "name": "Cognitum",
