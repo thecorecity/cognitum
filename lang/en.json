@@ -148,6 +148,13 @@
       },
       "successful": ":white_check_mark: I'll remind you %message% in %time%."
     },
+    "top": {
+      "title": "Guild Statistics",
+      "description": "Showing guild statistics such as:\n\n`channels` — guild channels activity;\n`users` — guild members activity;\n`voice` — guild members voice activity.",
+      "listTitle": {
+        "channels": "Top channels activity of %guildName%"
+      }
+    },
     "welcome": {
       "title": "Welcome feature managing",
       "description": "Command for managing settings for welcome feature. Only admins can change settings.",
