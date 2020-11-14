@@ -152,7 +152,14 @@
       "title": "Guild Statistics",
       "description": "Showing guild statistics such as:\n\n`channels` — guild channels activity;\n`users` — guild members activity;\n`voice` — guild members voice activity.",
       "listTitle": {
-        "channels": "Top channels activity of %guildName%"
+        "channels": "Top channels activity of %guildName%",
+        "voice": "Top members voice activity of %guildName%",
+        "members": "Top members activity of %guildName%"
+      },
+      "statsEmpty": {
+        "channels": "No channels activity tracked yet!",
+        "voice": "No voice activity tracked yet!",
+        "members": "No members activity tracked yet!"
       }
     },
     "welcome": {
