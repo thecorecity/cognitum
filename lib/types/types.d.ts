@@ -50,7 +50,7 @@ declare namespace Cognitum {
 		arguments?: Cognitum.CommandArgumentsOptions;
 	}
 
-	public type ArgumentErrorType = "min" | "max" | "length";
+	public type ArgumentErrorType = "min" | "max" | "length" | "value" | "valueList";
 
 	private interface ArgumentLengthOptions {
 		mode: Cognitum.ArgumentsLengthValidationMode;

@@ -5,6 +5,8 @@
   ],
   "typeAcquisition": {
     "enable": true,
-    "include": ["sequelize"]
+    "include": [
+      "sequelize"
+    ]
   }
 }
