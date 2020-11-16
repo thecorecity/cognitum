@@ -251,7 +251,7 @@
     "CHANGE_NICKNAME": "Change nickname",
     "MANAGE_NICKNAME": "Change other members nicknames",
     "MANAGE_ROLES": "Manage guild roles",
-    "MANAGE_WEBHOOKS": "Mange guild webhooks",
+    "MANAGE_WEBHOOKS": "Manage guild webhooks",
     "MANAGE_EMOJIS": "Manage guild emojis"
   }
 }
