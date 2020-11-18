@@ -1,11 +1,14 @@
-const CognitumClient = require("./lib/classes/CognitumClient.js");
-const { log } = require("./lib/classes/Utils.js");
+const { ShardingManager } = require("discord.js");
+const ConfigManager = require("./lib/classes/ConfigManager");
 
-const cognitum = new CognitumClient();
-cognitum.initialize().then(() => {
-	log("success", "Initialization success!");
-}).catch(error => {
-	log("error", "Initialization failed! Error:");
+ConfigManager.initialize().then(() => {
+	const shardingManager = new ShardingManager("./shard.js", { token: ConfigManager.get("auth.discord.token") });
+	shardingManager.on("shardCreate", shard => console.log(`Loaded shard #${shard.id}!`));
+	return shardingManager.spawn();
+}).then(() => {
+	console.log("Spawning successful!");
+}).catch((error) => {
+	console.error("Failed to initialize ShardingManager!");
 	console.error(error);
 	process.exit();
 });
