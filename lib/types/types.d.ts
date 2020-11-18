@@ -23,7 +23,7 @@ declare namespace Database {
 }
 
 declare namespace Cognitum {
-	import Bot from "../classes/Bot.js";
+	import CognitumClient from "../classes/CognitumClient.js";
 
 	/**
 	 * Available types of log. This types will be used in future for better styling of logging and enabling different

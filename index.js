@@ -1,7 +1,7 @@
-const Bot = require("./lib/classes/Bot.js");
+const CognitumClient = require("./lib/classes/CognitumClient.js");
 const { log } = require("./lib/classes/Utils.js");
 
-const cognitum = new Bot();
+const cognitum = new CognitumClient();
 cognitum.initialize().then(() => {
 	log("success", "Initialization success!");
 }).catch(error => {
