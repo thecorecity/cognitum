@@ -189,7 +189,7 @@
     "errors": {
       "default": {
         "title": "Виникла помилка!",
-        "description": "Виникла несподівана помилка! Спробуйте ще раз пізніше, або повідомите нас про цю проблему [у нашій гільдії Discord](https://discord.gg/SbNZQMV) або [репозіторії на GitHub](https://github.com/thecorecity/cognitum/issues/new).\n__Подробиці:__ %errorMessage%\n"
+        "description": "Виникла несподівана помилка! Спробуйте ще раз пізніше, або повідомите нас про цю проблему [у нашій гільдії Discord](https://discord.gg/SbNZQMV) або [репозіторії на GitHub](https://github.com/thecorecity/cognitum/issues/new).\n__Подробиці:__ %errorMessage%"
       },
       "commandNotFound": {
         "title": "Команду `%commandName%` не знайдено!",
