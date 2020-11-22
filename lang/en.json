@@ -3,7 +3,7 @@
   "_languagePack": {
     "title": "English",
     "authors": "The Core Community",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -187,13 +187,21 @@
       "description": "Sample description."
     },
     "errors": {
-      "default": {
-        "title": "An error has occurred!",
-        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new).\n__Details:__ %errorMessage%\n"
+      "botPermissionError": {
+        "title": "Missing permissions!",
+        "description": "Bot missing one of the following permissions: %permissionsList%. Contact your guild administrators to fix it."
+      },
+      "callerPermissionError": {
+        "title": "Access denied!",
+        "description": "You don't have required permissions to call this command! List of required permissions: %permissionsList%."
       },
       "commandNotFound": {
         "title": "Command `%commandName%` not found!",
         "description": "Requested command not found! Try to enter `%prefix%help` to get a complete list of commands."
+      },
+      "default": {
+        "title": "An error has occurred!",
+        "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new).\n__Details:__ %errorMessage%\n"
       },
       "invalidArgumentError": {
         "title": "Invalid arguments error",
@@ -203,13 +211,14 @@
         "length": "Argument #%argumentIndex% must have length `%requiredLength%`!",
         "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed."
       },
-      "callerPermissionError": {
-        "title": "Access denied!",
-        "description": "You don't have required permissions to call this command! List of required permissions: %permissionsList%."
-      },
-      "botPermissionError": {
-        "title": "Missing permissions!",
-        "description": "Bot missing one of the following permissions: %permissionsList%. Contact your guild administrators to fix it."
+      "timeString": {
+        "title": "Incorrect time string passed!",
+        "description": "Time string passed to the argument is invalid!\n__Details:__ %details%",
+        "details": {
+          "notParsed": "Argument is not fit format: `<days>`d`<hours>`h`<minutes>`m`<seconds>`s.",
+          "wrongParams": "One of the time string segments have invalid amount of time!",
+          "zeroTime": "Time string must contain non-zero amount of time!"
+        }
       }
     },
     "tasks": {
