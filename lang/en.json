@@ -129,6 +129,10 @@
     "profile": {
       "title": "Member profile",
       "description": "Shows information about current member from Discord and internal bot database.",
+      "example": {
+        "caller": "`profile` — Show your profile;",
+        "selected": "`profile @Helif` — Show profile of the user by mention."
+      },
       "botTitle": "Bot: %username%",
       "memberTitle": "Member: %username%",
       "parts": {
@@ -150,7 +154,12 @@
     },
     "top": {
       "title": "Guild Statistics",
-      "description": "Showing guild statistics such as:\n\n`channels` — guild channels activity;\n`users` — guild members activity;\n`voice` — guild members voice activity.",
+      "description": "Showing guild statistics such as:\n\n`channels` `ch` — guild channels activity;\n`users` `u` — guild members activity;\n`voice` `v` — guild members voice activity.",
+      "example": {
+        "channels": "`top channels` — Show first page of the top channels activity;",
+        "voiceShort": "`top v` — Show first page of the top voice activity;",
+        "usersPaged": "`top users 3` — Show third page of the top members activity."
+      },
       "listTitle": {
         "channels": "Top channels activity of %guildName%",
         "voice": "Top members voice activity of %guildName%",
