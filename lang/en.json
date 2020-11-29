@@ -2,7 +2,12 @@
   "$schema": "../lib/schemas/language.schema.json",
   "_languagePack": {
     "title": "English",
-    "authors": "The Core Community",
+    "authors": [
+      "Coma Grayce",
+      "KoloMl#8072",
+      "Kolonsky",
+      "sadnessmilkshake#2014"
+    ],
     "version": "0.8.0",
     "dateLocale": "en-US"
   },
