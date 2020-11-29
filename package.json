@@ -31,7 +31,7 @@
   "homepage": "https://github.com/thecorecity/cognitum#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "discord.js": "^12.2.0",
+    "discord.js": "^12.5.1",
     "ignore": "^5.1.8",
     "lodash": "^4.17.19",
     "mariadb": "^2.4.0",
