@@ -31,7 +31,7 @@
   "homepage": "https://github.com/thecorecity/cognitum#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "discord.js": "^12.2.0",
+    "discord.js": "^12.5.1",
     "ignore": "^5.1.8",
     "lodash": "^4.17.19",
     "mariadb": "^2.4.0",
@@ -42,7 +42,7 @@
     "@babel/eslint-parser": "^7.12.1",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-private-methods": "^7.12.1",
-    "eslint": "^7.3.1",
+    "eslint": "^7.14.0",
     "readline-sync": "^1.4.10",
     "sequelize-cli": "^6.2.0"
   }

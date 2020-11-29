@@ -16,7 +16,11 @@
           "default": "Language"
         },
         "authors": {
-          "type": "string",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "title": "Translation authors"
+          },
           "title": "Contributors",
           "description": "Determines who created or contributed into this pack.",
           "default": "The Core Community"
@@ -27,6 +31,12 @@
           "description": "Pack version. Version format: {numbers}.{numbers}.{numbers}",
           "default": "1.0.0",
           "pattern": "\\d+\\.\\d+\\.\\d+"
+        },
+        "dateLocale": {
+          "type": "string",
+          "title": "Date Locale",
+          "description": "Date locale used in this language.",
+          "default": "en-US"
         }
       },
       "required": [
