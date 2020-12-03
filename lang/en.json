@@ -8,12 +8,12 @@
       "Kolonsky",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.8.0",
+    "version": "0.9.0",
     "dateLocale": "en-US"
   },
   "bot": {
     "name": "Cognitum",
-    "description": "This is a small Discord bot with statistics collection and useful utility features made by The Core Community."
+    "description": "This is a small Discord bot with statistics collection and useful utility features made by The Core Community.\n\nCurrent prefix: `%prefix%`"
   },
   "category": {
     "basic": {
@@ -68,6 +68,7 @@
         "enableAll": "`log enable all` — Enable all logging features."
       },
       "settingsTitle": "Logs settings for %guildName%",
+      "settingsChangedTitle": "Settings updated!",
       "settingsEvents": "Events:",
       "state": {
         "enabled": "Logging enabled",
@@ -76,11 +77,15 @@
       "channel": {
         "public": {
           "enabled": "Public channel: <#%channelId%>",
-          "disabled": "Public channel is not set"
+          "disabled": "Public channel is not set",
+          "set": "Public logs channel successfully set to <#%channelId%>!",
+          "reset": "Public logs channel removed!"
         },
         "private": {
           "enabled": "Private channel: <#%channelId%>",
-          "disabled": "Private channel is not set"
+          "disabled": "Private channel is not set",
+          "set": "Private logs channel successfully set to <#%channelId%>!",
+          "reset": "Private logs channel removed!"
         }
       },
       "events": {
