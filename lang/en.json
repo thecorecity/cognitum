@@ -67,7 +67,7 @@
         "enableAll": "`log enable all` — Enable all logging features."
       },
       "settingsTitle": "Logs settings for %guildName%",
-      "settingsChangedTitle": "Settings updated!",
+      "settingsChangedTitle": "Settings updated for %guildName%!",
       "settingsEvents": "Events:",
       "state": {
         "enabled": "Logging enabled",
