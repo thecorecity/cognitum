@@ -5,7 +5,6 @@
     "authors": [
       "Coma Grayce",
       "KoloMl#8072",
-      "Kolonsky",
       "sadnessmilkshake#2014"
     ],
     "version": "0.9.0",
@@ -96,7 +95,8 @@
         "ban": "`ban` Members ban",
         "msg_delete": "`msg_delete` Deleted messages",
         "msg_image": "`msg_image` Attachments",
-        "msg_update": "`msg_update` Changed messages"
+        "msg_update": "`msg_update` Changed messages",
+        "all": "`all` All events"
       },
       "eventChanged": {
         "title": "Event settings update",
