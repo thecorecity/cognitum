@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.9.0",
+    "version": "0.10.0",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -246,6 +246,12 @@
         "description": "Remind you: %reminderMessage%",
         "descriptionEmpty": "Remind you about something!",
         "footer": "Cognitum Reminder 2000"
+      }
+    },
+    "logs": {
+      "attachment": {
+        "title": "Attachment",
+        "description": ":page_facing_up: [%filename% (%size%)](%link%)\n:speech_balloon: [Message](%messageLink%)"
       }
     }
   },
