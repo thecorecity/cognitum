@@ -198,6 +198,28 @@
               }
             }
           }
+        },
+        "logs": {
+          "type": "object",
+          "title": "Tasks embeds entries",
+          "description": "Object with entries for embed rendering for log events",
+          "patternProperties": {
+            "^[A-Za-z_]+$": {
+              "type": "object",
+              "title": "Task embed",
+              "description": "Embed for rendering task messages",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "Embed title"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Embed description"
+                }
+              }
+            }
+          }
         }
       },
       "patternProperties": {

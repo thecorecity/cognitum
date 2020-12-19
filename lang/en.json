@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.9.0",
+    "version": "0.10.0",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -228,7 +228,8 @@
         "min": "This command requires at least %minValue% argument(s)!",
         "max": "This command requires less or equal %maxValue% argument(s)!",
         "length": "Argument #%argumentIndex% must have length `%requiredLength%`!",
-        "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed."
+        "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed.",
+        "value": "Invalid argument passed: `%argumentPassed%`."
       },
       "timeString": {
         "title": "Incorrect time string passed!",
@@ -246,6 +247,26 @@
         "description": "Remind you: %reminderMessage%",
         "descriptionEmpty": "Remind you about something!",
         "footer": "Cognitum Reminder 2000"
+      }
+    },
+    "logs": {
+      "attachment": {
+        "title": "Attachment",
+        "description": ":page_facing_up: [%filename% (%size%)](%link%)\n:speech_balloon: [Message](%messageLink%)"
+      },
+      "messageUpdate": {
+        "title": "Message Changed",
+        "info": {
+          "name": "Information",
+          "value": "Edited at: %messageUpdatedAt%\n[Jump to message](%messageLink%)"
+        }
+      },
+      "messageDelete": {
+        "title": "Message Deleted",
+        "info": {
+          "name": "Information",
+          "value": "Channel: <#%channelId%>"
+        }
       }
     }
   },
