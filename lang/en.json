@@ -253,6 +253,20 @@
       "attachment": {
         "title": "Attachment",
         "description": ":page_facing_up: [%filename% (%size%)](%link%)\n:speech_balloon: [Message](%messageLink%)"
+      },
+      "messageUpdate": {
+        "title": "Message Changed",
+        "info": {
+          "name": "Information",
+          "value": "Edited at: %messageUpdatedAt%\n[Jump to message](%messageLink%)"
+        }
+      },
+      "messageDelete": {
+        "title": "Message Deleted",
+        "info": {
+          "name": "Information",
+          "value": "Channel: <#%channelId%>"
+        }
       }
     }
   },
