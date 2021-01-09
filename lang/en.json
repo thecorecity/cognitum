@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.10.0",
+    "version": "0.11.0",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -35,6 +35,24 @@
       "links": {
         "title": "Links:",
         "description": "[Discord guild](https://discord.gg/3S9UEm6)\n[GitHub repository](https://github.com/thecorecity/cognitum)\n[Report problem or make a suggestion](https://github.com/thecorecity/cognitum/issues)"
+      }
+    },
+    "doc": {
+      "title": "Documents",
+      "description": "Documents management command.",
+      "example": {
+        "list": "`doc list` — Open list of the documents;",
+        "open": "`doc rules` — Open document with code «rules»;",
+        "create": "`doc create games-list` — Create new document with code «games-list»;",
+        "update": "`doc edit cards` — Edit document «cards» content;",
+        "rename": "`doc rename top-users Top server users` — Rename document «top-users» to «Top server users»;",
+        "image": "`doc image picture https://example.org/image.png` — Attach image to «picture» document;",
+        "delete": "`doc delete topic` — Delete document «topic»."
+      },
+      "list": {
+        "title": "List of Documents",
+        "descriptionEmpty": "This page is empty!",
+        "pagerFooter": "Page %pageNumber%"
       }
     },
     "help": {
@@ -221,6 +239,30 @@
       "default": {
         "title": "An error has occurred!",
         "description": "An unexpected error has occurred! Try again later or notify us about this problem at [our Discord guild](https://discord.gg/SbNZQMV) or [GitHub repository](https://github.com/thecorecity/cognitum/issues/new).\n__Details:__ %errorMessage%\n"
+      },
+      "documentError": {
+        "title": "",
+        "description": "",
+        "usage": {
+          "title": "Documents: Wrong command usage!",
+          "description": "Incorrect command usage! Check help page for this command using `help doc` command."
+        },
+        "missing": {
+          "title": "Documents: Document missing!",
+          "description": "Document you're looking for missing in database! You need to create it first by command `doc create <slug>`!"
+        },
+        "exist": {
+          "title": "Documents: This slug already used!",
+          "description": "Following document slug already used in this guild! In order to perform this action you need this document slug to be free."
+        },
+        "canceled": {
+          "title": "Documents: Action canceled by user!",
+          "description": "Document content fetching has been canceled by user."
+        },
+        "timeout": {
+          "title": "Documents: Timed out!",
+          "description": "Document content fetching has been canceled due to timeout. Note that you have only 60 seconds to send required document content."
+        }
       },
       "invalidArgumentError": {
         "title": "Invalid arguments error",
