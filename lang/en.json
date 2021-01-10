@@ -53,7 +53,41 @@
         "title": "List of Documents",
         "descriptionEmpty": "This page is empty!",
         "pagerFooter": "Page %pageNumber%"
-      }
+      },
+      "request": {
+        "create": {
+          "title": "Document creating",
+          "description": "Document creation started! Send content for this document in next 60 seconds."
+        },
+        "update": {
+          "title": "Document update",
+          "description": "Document content updating started! Send new content for this document in next 60 seconds."
+        }
+      },
+      "success": {
+        "created": {
+          "title": "Document created!",
+          "description": "Document successfully created! To open this document simply call command `doc %slug%`."
+        },
+        "updated": {
+          "title": "Document content updated!",
+          "description": "Document `%slug%` content successfully updated!"
+        },
+        "rename": {
+          "title": "Document renamed!",
+          "description": "Document `%slug%` title renamed to «%updatedTitle%»."
+        },
+        "attachment": {
+          "title": "Document image attached!",
+          "description": "Image attached to document %slug%."
+        },
+        "deleted": {
+          "title": "Document deleted!",
+          "description": "Document `%slug%` successfully deleted!"
+        }
+      },
+      "newDocumentTitle": "New document",
+      "pushDocumentFooter": "To cancel this action send \"cancel\""
     },
     "help": {
       "title": "Help",
