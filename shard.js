@@ -1,5 +1,5 @@
 const CognitumClient = require("./lib/classes/CognitumClient");
-const { log } = require("./lib/classes/Utils");
+const { logger } = require("./lib/classes/Utils");
 const { Intents } = require("discord.js");
 
 const cognitum = new CognitumClient({
@@ -13,9 +13,9 @@ const cognitum = new CognitumClient({
 	}
 });
 cognitum.initialize().then(() => {
-	log("success", "Initialization success!");
+	logger.info("Shard initialization completed!");
 }).catch(error => {
-	log("error", "Initialization failed! Error:");
+	logger.error("Shard initialization failed!");
 	console.error(error);
 	process.exit();
 });

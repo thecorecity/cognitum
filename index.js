@@ -1,6 +1,6 @@
 const CognitumShardingManager = require("./lib/classes/CognitumShardingManager");
-const { log } = require("./lib/classes/Utils");
+const { logger } = require("./lib/classes/Utils");
 
 CognitumShardingManager.initialize().then(() => {
-	log("success", "Initialization successful!");
+	logger.info("Sharding manager initialized");
 });
