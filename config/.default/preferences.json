@@ -4,17 +4,20 @@
     "debug": false,
     "prefix": "c!",
     "embedColors": {
-      "default": 0,
-      "error": 0,
-      "warning": 0
+      "default": 12382890,
+      "error": 11742509,
+      "warning": 15921834
     },
     "console": {
-      "title": "",
-      "colors": {
-        "default": "",
-        "error": "",
-        "warning": "",
-        "notice": ""
+      "title": ""
+    },
+    "commands": {
+      "about": {
+        "links": {
+          "discordGuild": "https://discord.gg/3S9UEm6",
+          "github": "https://github.com/thecorecity/cognitum",
+          "githubIssues": "https://github.com/thecorecity/cognitum/issues"
+        }
       }
     }
   }
