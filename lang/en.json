@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.11.0",
+    "version": "0.11.1",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -34,7 +34,7 @@
       "description": "Shows information about this bot.",
       "links": {
         "title": "Links:",
-        "description": "[Discord guild](https://discord.gg/3S9UEm6)\n[GitHub repository](https://github.com/thecorecity/cognitum)\n[Report problem or make a suggestion](https://github.com/thecorecity/cognitum/issues)"
+        "description": "[Discord guild](%discordGuildInviteUrl%)\n[GitHub repository](%repositoryUrl%)\n[Report problem or make a suggestion](%issuesUrl%)"
       }
     },
     "doc": {
