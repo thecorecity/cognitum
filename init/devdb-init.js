@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-catch */
 const mariadb = require("mariadb");
 const readlineSync = require("readline-sync");
+const ConfigManager = require("../lib/classes/ConfigManager");
 
 console.log("\n\n == Database initialization == ");
 console.log("Creating \"cognitum_dev\" database and \"cognitum_dev\" user with \"cognitum_dev\" password if it not exists.\n");
@@ -10,6 +11,7 @@ let port = readlineSync.question("mariadb port (default: 3306): ");
 let username = readlineSync.question("mariadb root username (default: root): ");
 let password = readlineSync.question("mariadb root password: ", { hideEchoBack: true });
 
+// Validate and put default values
 if (!hostname?.length)
 	hostname = "localhost";
 if (!port?.length) {
@@ -35,6 +37,10 @@ const db = mariadb.createPool({
 });
 
 (async () => {
+	// This action used to create default configuration files
+	console.log("Init configuration files...");
+	await ConfigManager.initialize();
+
 	let connection;
 	try {
 		console.log("Creating connection...");
