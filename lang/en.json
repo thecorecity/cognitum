@@ -171,6 +171,47 @@
       "move": "`merge 415190108577464333` — Move all members from your current voice channel to channel with following ID.",
       "movingCompleted": ":white_check_mark: Moved members from %currentChannel% to %targetChannel%!"
     },
+    "nickname": {
+      "title": "Nickname sanitizer",
+      "description": "Nickname sanitizer control panel.",
+      "examples": {
+        "showStatus": "`nickname` — Show current status;",
+        "showModesList": "`nickname modes` — Show available modes list;",
+        "showModeInfo": "`nickname info latin` — Show info about `latin` sanitizing mode;",
+        "enable": "`nickname enable` — Enable nickname sanitizer feature;",
+        "setMode": "`nickname set latin` — Set nickname sanitizing mode to `latin`."
+      },
+      "modeChanged": {
+        "title": "Nickname sanitizer mode changed",
+        "description": "Sanitizer mode changed to `%sanitizerModeCode%` %sanitizerModeName%."
+      },
+      "modesList": {
+        "title": "Nickname sanitizer modes list"
+      },
+      "sanitizerMode": {
+        "latin": {
+          "name": "Latin with cyrillic transliteration",
+          "description": "This mode validate nicknames only with latin symbols, numbers and symbols from this list: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname. Cyrillic symbols (`Аа-Яя`) will be transliterated to the latin symbols before clearing.",
+          "regexp": "Invalid symbols detection RegExp: `/(?:^[^\\w]|[^\\w\\d]$|[^\\w\\d\\s'._-])/g`"
+        }
+      },
+      "status": {
+        "title": "Nickname sanitizer status",
+        "description": "**Feature status:** %status%;\n**Sanitizing mode:** `%sanitizeModeCode%` %sanitizeModeName%.",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "statusUpdated": {
+        "enabled": {
+          "title": "Nickname sanitizer status updated",
+          "description": "Nickname sanitizer enabled."
+        },
+        "disabled": {
+          "title": "Nickname sanitizer status updated",
+          "description": "Nickname sanitizer disabled."
+        }
+      }
+    },
     "ping": {
       "title": "Ping",
       "description": "Get current public bot statistics.",
