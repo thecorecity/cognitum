@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.11.1",
+    "version": "0.11.2",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -352,7 +352,7 @@
         "title": "Incorrect time string passed!",
         "description": "Time string passed to the argument is invalid!\n__Details:__ %details%",
         "details": {
-          "notParsed": "Argument is not fit format: `<days>`d`<hours>`h`<minutes>`m`<seconds>`s.",
+          "notParsed": "Argument is not fit format: `<days>`d`<hours>`h`<minutes>`m`<seconds>`s.\n\nNote that:\n\n- `days` must be greater than `0`;\n- `hours` must be between `1` and `23`;\n- `minutes` and `seconds` must be between `1` and `59`.",
           "wrongParams": "One of the time string segments have invalid amount of time!",
           "zeroTime": "Time string must contain non-zero amount of time!"
         }
