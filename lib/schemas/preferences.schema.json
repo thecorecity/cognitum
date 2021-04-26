@@ -10,17 +10,33 @@
       "title": "Bot preference section",
       "description": "Contains preferences entries for bot.",
       "properties": {
+        "commands": {
+          "type": "object",
+          "title": "Preferences for available commands",
+          "description": "This used by command classes for internal use.",
+          "patternProperties": {
+            "^\\w+$": {
+              "title": "Command section",
+              "description": "List of preferences for command."
+            }
+          }
+        },
+        "console": {
+          "type": "object",
+          "title": "Console preference section",
+          "description": "Preferences for log output appearance etc.",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Console window title",
+              "description": "Custom message for console window."
+            }
+          }
+        },
         "debug": {
           "type": "boolean",
           "title": "Debugging mode",
           "description": "Enable or disable bot debugging."
-        },
-        "prefix": {
-          "type": "string",
-          "title": "Default bot prefix",
-          "description": "Used for commands calling. May be changed by guild owners. Prefixes stored into database will not be changed.",
-          "minLength": 1,
-          "maxLength": 3
         },
         "embedColors": {
           "type": "object",
@@ -44,40 +60,12 @@
             }
           }
         },
-        "console": {
-          "type": "object",
-          "title": "Console preference section",
-          "description": "Preferences for log output appearance etc.",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Console window title",
-              "description": "Custom message for console window."
-            },
-            "colors": {
-              "type": "object",
-              "title": "Console messages colors",
-              "description": "Colors for different console messages types.",
-              "properties": {
-                "default": {
-                  "type": "string",
-                  "title": "Default messages color"
-                },
-                "error": {
-                  "type": "string",
-                  "title": "Error messages color"
-                },
-                "warning": {
-                  "type": "string",
-                  "title": "Warning messages color"
-                },
-                "notice": {
-                  "type": "string",
-                  "title": "Notice messages color"
-                }
-              }
-            }
-          }
+        "prefix": {
+          "type": "string",
+          "title": "Default bot prefix",
+          "description": "Used for commands calling. May be changed by guild owners. Prefixes stored into database will not be changed.",
+          "minLength": 1,
+          "maxLength": 3
         }
       }
     }

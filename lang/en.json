@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.11.0",
+    "version": "0.11.2",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -34,7 +34,7 @@
       "description": "Shows information about this bot.",
       "links": {
         "title": "Links:",
-        "description": "[Discord guild](https://discord.gg/3S9UEm6)\n[GitHub repository](https://github.com/thecorecity/cognitum)\n[Report problem or make a suggestion](https://github.com/thecorecity/cognitum/issues)"
+        "description": "[Discord guild](%discordGuildInviteUrl%)\n[GitHub repository](%repositoryUrl%)\n[Report problem or make a suggestion](%issuesUrl%)"
       }
     },
     "doc": {
@@ -170,6 +170,47 @@
       "description": "Move members from voice channel you're connected to, to another one. This command can be casted only if caller and bot have Move Members permission.",
       "move": "`merge 415190108577464333` — Move all members from your current voice channel to channel with following ID.",
       "movingCompleted": ":white_check_mark: Moved members from %currentChannel% to %targetChannel%!"
+    },
+    "nickname": {
+      "title": "Nickname sanitizer",
+      "description": "Nickname sanitizer control panel.",
+      "examples": {
+        "showStatus": "`nickname` — Show current status;",
+        "showModesList": "`nickname modes` — Show available modes list;",
+        "showModeInfo": "`nickname info latin` — Show info about `latin` sanitizing mode;",
+        "enable": "`nickname enable` — Enable nickname sanitizer feature;",
+        "setMode": "`nickname set latin` — Set nickname sanitizing mode to `latin`."
+      },
+      "modeChanged": {
+        "title": "Nickname sanitizer mode changed",
+        "description": "Sanitizer mode changed to `%sanitizerModeCode%` %sanitizerModeName%."
+      },
+      "modesList": {
+        "title": "Nickname sanitizer modes list"
+      },
+      "sanitizerMode": {
+        "latin": {
+          "name": "Latin with cyrillic transliteration",
+          "description": "This mode validate nicknames only with latin symbols, numbers and symbols from this list: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname. Cyrillic symbols (`Аа-Яя`) will be transliterated to the latin symbols before clearing.",
+          "regexp": "Invalid symbols detection RegExp: `/(?:^[^\\w]|[^\\w\\d]$|[^\\w\\d\\s'._-])/g`"
+        }
+      },
+      "status": {
+        "title": "Nickname sanitizer status",
+        "description": "**Feature status:** %status%;\n**Sanitizing mode:** `%sanitizeModeCode%` %sanitizeModeName%.",
+        "enabled": "Enabled",
+        "disabled": "Disabled"
+      },
+      "statusUpdated": {
+        "enabled": {
+          "title": "Nickname sanitizer status updated",
+          "description": "Nickname sanitizer enabled."
+        },
+        "disabled": {
+          "title": "Nickname sanitizer status updated",
+          "description": "Nickname sanitizer disabled."
+        }
+      }
     },
     "ping": {
       "title": "Ping",
@@ -311,7 +352,7 @@
         "title": "Incorrect time string passed!",
         "description": "Time string passed to the argument is invalid!\n__Details:__ %details%",
         "details": {
-          "notParsed": "Argument is not fit format: `<days>`d`<hours>`h`<minutes>`m`<seconds>`s.",
+          "notParsed": "Argument is not fit format: `<days>`d`<hours>`h`<minutes>`m`<seconds>`s.\n\nNote that:\n\n- `days` must be greater than `0`;\n- `hours` must be between `1` and `23`;\n- `minutes` and `seconds` must be between `1` and `59`.",
           "wrongParams": "One of the time string segments have invalid amount of time!",
           "zeroTime": "Time string must contain non-zero amount of time!"
         }
