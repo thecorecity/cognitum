@@ -47,6 +47,21 @@
           "default": "token"
         }
       }
+    },
+    "monitoring": {
+      "type": "object",
+      "title": "Monitoring tokens",
+      "description": "List of tokens for discord bots monitoring services",
+      "properties": {
+        "botsServerDiscord": {
+          "type": "string",
+          "title": "bots.server-discord.com"
+        },
+        "topGG": {
+          "type": "string",
+          "title": "top.gg"
+        }
+      }
     }
   }
 }
