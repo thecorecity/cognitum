@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.11.2",
+    "version": "0.11.3",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -216,7 +216,7 @@
       "title": "Ping",
       "description": "Get current public bot statistics.",
       "embedTitle": "Pong!",
-      "embedDescription": "**Uptime:** %uptime%\n**Connection:** %discordPing%"
+      "embedDescription": "**Guilds:** %shardGuilds%\n**Uptime:** %uptime%\n**Connection:** %discordPing%\n**Heap used:** %memoryUsage%"
     },
     "prefix": {
       "title": "Change prefix",
