@@ -66,6 +66,14 @@
           "description": "Used for commands calling. May be changed by guild owners. Prefixes stored into database will not be changed.",
           "minLength": 1,
           "maxLength": 3
+        },
+        "superUsers": {
+          "type": "array",
+          "title": "Super Users",
+          "description": "List of super users with access to developers commands",
+          "items": {
+            "type": "string"
+          }
         }
       }
     }
