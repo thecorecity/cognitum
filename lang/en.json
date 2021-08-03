@@ -7,7 +7,7 @@
       "KoloMl#8072",
       "sadnessmilkshake#2014"
     ],
-    "version": "0.11.2",
+    "version": "0.11.3",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -79,7 +79,7 @@
         },
         "attachment": {
           "title": "Document image attached!",
-          "description": "Image attached to document %slug%."
+          "description": "Image attached to document `%slug%`."
         },
         "deleted": {
           "title": "Document deleted!",
@@ -320,7 +320,7 @@
         "description": "",
         "usage": {
           "title": "Documents: Wrong command usage!",
-          "description": "Incorrect command usage! Check help page for this command using `help doc` command."
+          "description": "Incorrect command usage! Check help page for this command using `help doc`."
         },
         "missing": {
           "title": "Documents: Document missing!",
