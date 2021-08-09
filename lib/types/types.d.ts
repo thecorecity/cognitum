@@ -1,4 +1,17 @@
+import {Message, MessageOptions, MessagePayload} from "discord.js";
+
 declare type PermissionString = import("discord.js").PermissionString;
+
+/**
+ * Fix IDEA not fetching `send` method correctly for channels and members. Not sure if it's issue with a IDE, library
+ * itself or just a TypeScript language service, but for better methods resolving this is important.
+ */
+declare module "discord.js" {
+	// For almost all types of the channels
+	class Channel {
+		send(options: string | MessagePayload | MessageOptions): Promise<Message>;
+	}
+}
 
 declare namespace Database {
 	import {
@@ -23,8 +36,6 @@ declare namespace Database {
 }
 
 declare namespace Cognitum {
-	import CognitumClient from "../classes/CognitumClient.js";
-
 	/**
 	 * Available types of log. This types will be used in future for better styling of logging and enabling different
 	 * logs channels to show in console prompt.
