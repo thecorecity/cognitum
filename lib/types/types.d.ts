@@ -1,4 +1,18 @@
-import {Message, MessageOptions, MessagePayload} from "discord.js";
+import {
+	AwaitMessageComponentOptions,
+	AwaitMessagesOptions,
+	InteractionCollector,
+	InteractionCollectorOptions,
+	Message,
+	MessageCollector,
+	MessageCollectorOptions,
+	MessageComponentInteraction,
+	MessageOptions,
+	MessagePayload,
+	MessageResolvable
+} from "discord.js";
+import {Snowflake} from "discord-api-types";
+import {Collection} from "@discordjs/collection";
 
 declare type PermissionString = import("discord.js").PermissionString;
 
@@ -7,32 +21,33 @@ declare type PermissionString = import("discord.js").PermissionString;
  * itself or just a TypeScript language service, but for better methods resolving this is important.
  */
 declare module "discord.js" {
-	// For almost all types of the channels
-	class Channel {
+	class TextBasedChannels {
 		send(options: string | MessagePayload | MessageOptions): Promise<Message>;
+
+		lastMessageId: Snowflake | null;
+		readonly lastMessage: Message | null;
+		lastPinTimestamp: number | null;
+		readonly lastPinAt: Date | null;
+
+		awaitMessageComponent<T extends MessageComponentInteraction = MessageComponentInteraction>(
+			options?: AwaitMessageComponentOptions<T>,
+		): Promise<T>;
+
+		awaitMessages(options?: AwaitMessagesOptions): Promise<Collection<Snowflake, Message>>;
+
+		bulkDelete(
+			messages: Collection<Snowflake, Message> | readonly MessageResolvable[] | number,
+			filterOld?: boolean,
+		): Promise<Collection<Snowflake, Message>>;
+
+		createMessageComponentCollector<T extends MessageComponentInteraction = MessageComponentInteraction>(
+			options?: InteractionCollectorOptions<T>,
+		): InteractionCollector<T>;
+
+		createMessageCollector(options?: MessageCollectorOptions): MessageCollector;
+
+		sendTyping(): Promise<void>;
 	}
-}
-
-declare namespace Database {
-	import {
-		GuildMemberModel,
-		GuildChannelModel,
-		UserModel,
-		GuildModel,
-		DocumentModel,
-		MessageStatisticsModel,
-		VoiceStatisticsModel,
-		TaskModel
-	} from "/lib/classes/Database.js";
-
-	public type GuildMemberModel = GuildMemberModel;
-	public type GuildChannelModel = GuildChannelModel;
-	public type UserModel = UserModel;
-	public type GuildModel = GuildModel;
-	public type DocumentModel = DocumentModel;
-	public type MessageStatisticsModel = MessageStatisticsModel;
-	public type VoiceStatisticsModel = VoiceStatisticsModel;
-	public type TaskModel = TaskModel;
 }
 
 declare namespace Cognitum {
@@ -47,13 +62,6 @@ declare namespace Cognitum {
 	 * lengths array.
 	 */
 	public type ArgumentsLengthValidationMode = "max" | "exact";
-
-	public interface ContextModelsInstances {
-		guild: Database.GuildModel;
-		channel: Database.GuildChannelModel;
-		member: Database.GuildMemberModel;
-		user: Database.UserModel;
-	}
 
 	public interface ContextValidatorOptions {
 		callerPermission?: PermissionString | PermissionString[];
