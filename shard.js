@@ -3,7 +3,6 @@ const { logger } = require("./lib/classes/Utils");
 const { Intents } = require("discord.js");
 
 const cognitum = new CognitumClient({
-	disableMentions: "everyone",
 	// Explanation for the intents:
 	intents: new Intents([
 		// Used in remind command for sending notifications after timer ended
@@ -15,6 +14,7 @@ const cognitum = new CognitumClient({
 		Intents.FLAGS.GUILD_VOICE_STATES
 	])
 });
+
 cognitum.initialize().then(() => {
 	logger.info("Shard initialization completed!");
 }).catch(error => {
