@@ -2,9 +2,12 @@
 
 A small Discord bot with statistics collection and useful utility features.
 
-## Development
+## Requirements
 
-Please read [this article](https://github.com/thecorecity/cognitum/wiki/Development).
+For correct work this bot requires:
+
++ NodeJS v16+
++ MariaDB v10.4.7+
 
 ## Running
 
