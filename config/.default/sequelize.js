@@ -11,7 +11,7 @@ module.exports = {
 	},
 	production: {
 		database: production[production.dbtype].database,
-		username: production[production.dbtype].host,
+		username: production[production.dbtype].username,
 		password: production[production.dbtype].password,
 		host: production[production.dbtype].host,
 		// TODO Field with port in database configuration file
