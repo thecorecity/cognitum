@@ -8,7 +8,7 @@
       "sadnessmilkshake#2014",
       "Whitey#3062"
     ],
-    "version": "0.11.3",
+    "version": "0.11.4",
     "dateLocale": "ru-RU"
   },
   "bot": {
@@ -314,7 +314,7 @@
       },
       "default": {
         "title": "Произошла ошибка!",
-        "description": "Произошла неожиданная ошибка! Попробуйте повторить позже, или сообщите нам об этой проблеме в [нашей гильдии Discord](https://discord.gg/SbNZQMV) или [репозитории на GitHub](https://github.com/thecorecity/cognitum/issues/new)."
+        "description": "Произошла неожиданная ошибка! Попробуйте повторить позже, или сообщите нам об этой проблеме в [нашей гильдии Discord](https://discord.gg/SbNZQMV) или [репозитории на GitHub](https://github.com/thecorecity/cognitum/issues/new).\n__Детальная информация:__ %errorMessage%"
       },
       "documentError": {
         "title": "",
