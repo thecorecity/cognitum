@@ -2,9 +2,17 @@
 
 A small Discord bot with statistics collection and useful utility features.
 
-## Development
+## Requirements
 
-Please read [this article](https://github.com/thecorecity/cognitum/wiki/Development).
+For correct work this bot requires:
+
++ NodeJS v16+
++ MariaDB v10.4.7+
+
+On the Discord side, if your bot account have more then 100 guilds (non-verified bots with lower amount of guilds will work fine):
+
++ Access to the guild memebers intent.
++ (In future) Access to the mesage intent.
 
 ## Running
 
