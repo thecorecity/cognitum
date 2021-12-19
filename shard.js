@@ -11,7 +11,9 @@ const cognitum = new CognitumClient({
 		Intents.FLAGS.GUILDS,
 		Intents.FLAGS.GUILD_MEMBERS,
 		Intents.FLAGS.GUILD_MESSAGES,
-		Intents.FLAGS.GUILD_VOICE_STATES
+		Intents.FLAGS.GUILD_VOICE_STATES,
+		// Detecting new ban and unban events
+		Intents.FLAGS.GUILD_BANS
 	])
 });
 
