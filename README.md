@@ -12,7 +12,9 @@ For correct work this bot requires:
 On the Discord side, if your bot account have more then 100 guilds (non-verified bots with lower amount of guilds will work fine):
 
 + Access to the guild memebers intent.
-+ (In future) Access to the mesage intent.
++ Access to the mesage intent.
+
+Without these intents bot will be unable to keep track of members activity and interact with the members properly.
 
 ## Running
 
