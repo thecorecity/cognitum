@@ -45,6 +45,6 @@
     "@babel/plugin-proposal-private-methods": "^7.12.1",
     "eslint": "^7.14.0",
     "readline-sync": "^1.4.10",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.4.1"
   }
 }

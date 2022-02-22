@@ -348,6 +348,24 @@
         "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed.",
         "value": "Invalid argument passed: `%argumentPassed%`."
       },
+      "invalidLoggingChannel": {
+        "invalidChannel": {
+          "title": "Invalid channel type!",
+          "description": "<#%channelId%>'s channel type is invalid! Check the channel type of selected channel.\n**Note:** Only plain text channels are supported as logging channels."
+        },
+        "invalidChannelId": {
+          "title": "Failed to fetch the channel!",
+          "description": "Please send correct channel ID or mention the channel you want to use as logging channel. For more details call `help logs` command."
+        },
+        "missingChannel": {
+          "title": "Channel not found!",
+          "description": "Channel you trying to use as logging channel can't be located. Note that bot must have access to read and write messages to selected channel."
+        },
+        "unusualChannelType": {
+          "title": "Unsupported channel!",
+          "description": "Channel <#%channelId%> is not supported as logging channel!\n**Note:** Use only plain text channels! Announce channels or threads are not allowed for the logs."
+        }
+      },
       "timeString": {
         "title": "Incorrect time string passed!",
         "description": "Time string passed to the argument is invalid!\n__Details:__ %details%",
