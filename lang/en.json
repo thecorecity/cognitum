@@ -274,6 +274,14 @@
         "members": "No members activity tracked yet!"
       }
     },
+    "tracking": {
+      "title": "Manage Statistics Tracking",
+      "description": "Command for managing statistics tracking for users. Allows you to disable or enable tracking.\n\n__Data stored only when tracking enabled:__\n\n+ Your membership in guilds where this bot exist;\n+ Amount of time spent by you in voice channels;\n+ Amount and size of messages sent by you in all text channels.\n\n__Data which always being stored:__\n\n+ Your user ID;\n+ Status of tracking.",
+      "example": {
+        "enable": "`tracking on` — Enable tracking;",
+        "disable": "`tracking off` — Disable tracking and remove all data related to your account."
+      }
+    },
     "welcome": {
       "title": "Welcome feature managing",
       "description": "Command for managing settings for welcome feature. Only admins can change settings.",
