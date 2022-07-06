@@ -280,6 +280,32 @@
       "example": {
         "enable": "`tracking on` — Enable tracking;",
         "disable": "`tracking off` — Disable tracking and remove all data related to your account."
+      },
+      "embeds": {
+        "alreadyTrackable": {
+          "title": "Tracking Already Enabled",
+          "description": "Activity tracking is already enabled for your account. If you want to disable it, use `tracking off` command."
+        },
+        "alreadyNotTrackable": {
+          "title": "Tracking Already Disabled",
+          "description": "Activity tracking is already disabled for your account. If you want to enable it, use `tracking on` command."
+        },
+        "enabled": {
+          "title": "Tracking Enabled Successfully",
+          "description": "Tracking enabled successfully. Bot will start tracking activity for your account."
+        },
+        "disabled": {
+          "title": "Tracking Disabled Successfully",
+          "description": "Tracking disabled successfully. Bot will stop tracking activity for your account. All existing data related to your account was removed."
+        },
+        "disableConfirmation": {
+          "title": "Confirmation",
+          "description": "Are you sure you want to stop tracking your activity?\n\n**Warning:** This action cannot be undone. All data related to your account will be removed.\n\nTo confirm this action type `confirm` to this channel. To cancel type anything else. Action will be cancelled automatically in 30 seconds."
+        },
+        "disableCancelled": {
+          "title": "Cancelled",
+          "description": "Disabling tracking was cancelled. If you want to try disabling tracking again, use `tracking off` command."
+        }
       }
     },
     "welcome": {
