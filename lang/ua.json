@@ -2,11 +2,6 @@
   "$schema": "../lib/schemas/language.schema.json",
   "_languagePack": {
     "title": "Українська",
-    "authors": [
-      "Coma Grayce",
-      "sadnessmilkshake#2014"
-    ],
-    "version": "0.7.0",
     "dateLocale": "ua-UA"
   },
   "bot": {
