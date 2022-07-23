@@ -2,12 +2,6 @@
   "$schema": "../lib/schemas/language.schema.json",
   "_languagePack": {
     "title": "English",
-    "authors": [
-      "Coma Grayce",
-      "KoloMl#8072",
-      "sadnessmilkshake#2014"
-    ],
-    "version": "0.11.4",
     "dateLocale": "en-US"
   },
   "bot": {
