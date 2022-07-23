@@ -193,6 +193,11 @@
           "name": "Latin with cyrillic transliteration",
           "description": "This mode validate nicknames only with latin symbols, numbers and symbols from this list: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname. Cyrillic symbols (`Аа-Яя`) will be transliterated to the latin symbols before clearing.",
           "regexp": "Invalid symbols detection RegExp: `/(?:^[^\\w]|[^\\w\\d]$|[^\\w\\d\\s'._-])/g`"
+        },
+        "latin_cyrillic": {
+          "name": "Latin and cyrillic",
+          "description": "This mode validate nicknames only with latin symbols, cyrillic symbols, numbers, characters: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname.",
+          "regexp": "Invalid symbols detection RegExp: `/^[^\\wА-яЁё]|[^\\w\\dА-я]$|[^\\w\\d\\sА-я'._-]/g`"
         }
       },
       "status": {
