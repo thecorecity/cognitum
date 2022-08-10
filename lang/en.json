@@ -31,6 +31,29 @@
         "description": "[Discord guild](%discordGuildInviteUrl%)\n[GitHub repository](%repositoryUrl%)\n[Report problem or make a suggestion](%issuesUrl%)"
       }
     },
+    "channel": {
+      "title": "Channel",
+      "description": "Command for showing information about channel or changing this channel's properties.",
+      "example": {
+        "status": "`channel` — Shows information about current channel and visibility status;",
+        "show": "`channel show` — Shows current channel in the activity top;",
+        "hide": "`channel hide` — Hides current channel from the activity top."
+      },
+      "info": {
+        "title": "Channel: #%channelName%",
+        "description": "**Channel ID:** %id%\n**Created:** %createdAt%\n\n__Settings:__\n%settings%",
+        "settings": {
+          "hidden": {
+            "on": "Hidden from activity top",
+            "off": "Shown in activity top"
+          }
+        }
+      },
+      "visibilityToggle": {
+        "title": "Channel visibility updated!",
+        "description": "Visibility of the channel <#%channelId%> is updated!\n\n%settings%"
+      }
+    },
     "doc": {
       "title": "Documents",
       "description": "Documents management command.",
