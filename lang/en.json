@@ -2,12 +2,6 @@
   "$schema": "../lib/schemas/language.schema.json",
   "_languagePack": {
     "title": "English",
-    "authors": [
-      "Coma Grayce",
-      "KoloMl#8072",
-      "sadnessmilkshake#2014"
-    ],
-    "version": "0.12.0",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -211,6 +205,11 @@
           "name": "Latin with cyrillic transliteration",
           "description": "This mode validate nicknames only with latin symbols, numbers and symbols from this list: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname. Cyrillic symbols (`Аа-Яя`) will be transliterated to the latin symbols before clearing.",
           "regexp": "Invalid symbols detection RegExp: `/(?:^[^\\w]|[^\\w\\d]$|[^\\w\\d\\s'._-])/g`"
+        },
+        "latin_cyrillic": {
+          "name": "Latin and cyrillic",
+          "description": "This mode validate nicknames only with latin symbols, cyrillic symbols, numbers, characters: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname.",
+          "regexp": "Invalid symbols detection RegExp: `/^[^\\wА-яЁё]|[^\\w\\dА-я]$|[^\\w\\d\\sА-я'._-]/g`"
         }
       },
       "status": {
@@ -290,6 +289,40 @@
         "channels": "No channels activity tracked yet!",
         "voice": "No voice activity tracked yet!",
         "members": "No members activity tracked yet!"
+      }
+    },
+    "tracking": {
+      "title": "Manage Statistics Tracking",
+      "description": "Command for managing statistics tracking for users. Allows you to disable or enable tracking.\n\n__Data stored only when tracking enabled:__\n\n+ Your membership in guilds where this bot exist;\n+ Amount of time spent by you in voice channels;\n+ Amount and size of messages sent by you in all text channels.\n\n__Data which always being stored:__\n\n+ Your user ID;\n+ Status of tracking.",
+      "example": {
+        "enable": "`tracking on` — Enable tracking;",
+        "disable": "`tracking off` — Disable tracking and remove all data related to your account."
+      },
+      "embeds": {
+        "alreadyTrackable": {
+          "title": "Tracking Already Enabled",
+          "description": "Activity tracking is already enabled for your account. If you want to disable it, use `tracking off` command."
+        },
+        "alreadyNotTrackable": {
+          "title": "Tracking Already Disabled",
+          "description": "Activity tracking is already disabled for your account. If you want to enable it, use `tracking on` command."
+        },
+        "enabled": {
+          "title": "Tracking Enabled Successfully",
+          "description": "Tracking enabled successfully. Bot will start tracking activity for your account."
+        },
+        "disabled": {
+          "title": "Tracking Disabled Successfully",
+          "description": "Tracking disabled successfully. Bot will stop tracking activity for your account. All existing data related to your account was removed."
+        },
+        "disableConfirmation": {
+          "title": "Confirmation",
+          "description": "Are you sure you want to stop tracking your activity?\n\n**Warning:** This action cannot be undone. All data related to your account will be removed.\n\nTo confirm this action type `confirm` to this channel. To cancel type anything else. Action will be cancelled automatically in 30 seconds."
+        },
+        "disableCancelled": {
+          "title": "Cancelled",
+          "description": "Disabling tracking was cancelled. If you want to try disabling tracking again, use `tracking off` command."
+        }
       }
     },
     "welcome": {
