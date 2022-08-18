@@ -294,6 +294,9 @@
         "channels": "No channels activity tracked yet!",
         "voice": "No voice activity tracked yet!",
         "members": "No members activity tracked yet!"
+      },
+      "footer": {
+        "hiddenChannels": "Some of the channels are not found and will be hidden on the next request."
       }
     },
     "tracking": {
