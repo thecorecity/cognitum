@@ -1,20 +1,20 @@
 const CognitumClient = require("./lib/classes/CognitumClient");
 const { logger } = require("./lib/classes/Utils");
-const { Intents } = require("discord.js");
+const { GatewayIntentBits } = require("discord.js");
 
 const cognitum = new CognitumClient({
 	// Explanation for the intents:
-	intents: new Intents([
+	intents: [
 		// Used in remind command for sending notifications after timer ended
-		Intents.FLAGS.DIRECT_MESSAGES,
+		GatewayIntentBits.DirectMessages,
 		// Used for statistics calculation, messages execution, determining who is who for building contexts
-		Intents.FLAGS.GUILDS,
-		Intents.FLAGS.GUILD_MEMBERS,
-		Intents.FLAGS.GUILD_MESSAGES,
-		Intents.FLAGS.GUILD_VOICE_STATES,
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMembers,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildVoiceStates,
 		// Detecting new ban and unban events
-		Intents.FLAGS.GUILD_BANS
-	])
+		GatewayIntentBits.GuildBans,
+	]
 });
 
 cognitum.initialize().then(() => {
