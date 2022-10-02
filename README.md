@@ -1,21 +1,21 @@
+<center>
+	<img src="https://thecore.city/cognitum/icon.png" width="128" height="128">
+</center>
+
 # Cognitum
 
 A small Discord bot with statistics collection and useful utility features.
 
 ## Requirements
 
-For correct work this bot requires:
-
 + NodeJS v16+
 + MariaDB v10.4.7+
 
-On the Discord side, if your bot account have more then 100 guilds (non-verified bots with lower amount of guilds will work fine):
+## Required Discord Intents
 
-+ Access to the guild memebers intent.
-+ Access to the mesage intent.
+These intents should be configured in the Discord Developer Portal for your bot. If your bot is hosted for more than 100
+guilds, some intents will require verification from Discord. Without these intents, bot will not work properly. List of
+the required intents:
 
-Without these intents bot will be unable to keep track of members activity and interact with the members properly.
-
-## Running
-
-TODO: Complete this section.
++ Server Members Intent;
++ Message Content Intent.
