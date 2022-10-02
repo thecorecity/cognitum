@@ -9,7 +9,7 @@ import {
 	MessageComponentInteraction,
 	MessageOptions,
 	MessagePayload,
-	MessageResolvable
+	MessageResolvable, PermissionResolvable
 } from "discord.js";
 import {Snowflake} from "discord-api-types";
 import {Collection} from "@discordjs/collection";
@@ -64,8 +64,8 @@ declare namespace Cognitum {
 	public type ArgumentsLengthValidationMode = "max" | "exact";
 
 	public interface ContextValidatorOptions {
-		callerPermission?: PermissionString | PermissionString[];
-		botPermission?: PermissionString | PermissionString[];
+		callerPermission?: PermissionResolvable | PermissionResolvable[];
+		botPermission?: PermissionResolvable | PermissionResolvable[];
 		arguments?: Cognitum.CommandArgumentsOptions;
 	}
 
