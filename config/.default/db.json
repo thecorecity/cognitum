@@ -1,4 +1,4 @@
 {
-  "$schema": "https://files.thecore.city/schemas/cognitum/db.schema.json",
+  "$schema": "https://thecore.city/cognitum/schemas/db.schema.json",
   "dbtype": "dev"
 }

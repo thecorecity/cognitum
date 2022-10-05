@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://files.thecore.city/schemas/cognitum/db.schema.json",
+  "$id": "https://thecore.city/cognitum/schemas/db.schema.json",
   "title": "Database configuration file",
   "description": "JSON schema for database configuration file.",
   "type": "object",
