@@ -74,6 +74,28 @@
           "items": {
             "type": "string"
           }
+        },
+        "notifications": {
+          "type": "object",
+          "title": "Notifications preference section",
+          "description": "Preferences for notifications. Contain the address where some information about the bot will be sent. Meant for bot owners/developers.",
+          "properties": {
+            "enable": {
+              "type": "boolean",
+              "title": "Enable notifications",
+              "description": "Enable or disable notifications."
+            },
+            "guild": {
+              "type": "string",
+              "title": "Guild ID",
+              "description": "Guild ID where notifications will be sent."
+            },
+            "channel": {
+              "type": "string",
+              "title": "Channel ID",
+              "description": "Channel ID where notifications will be sent."
+            }
+          }
         }
       }
     }
