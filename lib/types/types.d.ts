@@ -1,54 +1,7 @@
-import {
-	AwaitMessageComponentOptions,
-	AwaitMessagesOptions,
-	InteractionCollector,
-	InteractionCollectorOptions,
-	Message,
-	MessageCollector,
-	MessageCollectorOptions,
-	MessageComponentInteraction,
-	MessageOptions,
-	MessagePayload,
-	MessageResolvable, PermissionResolvable
-} from "discord.js";
-import {Snowflake} from "discord-api-types";
-import {Collection} from "@discordjs/collection";
+import {PermissionResolvable} from "discord.js";
+import {Model} from "sequelize";
 
 declare type PermissionString = import("discord.js").PermissionString;
-
-/**
- * Fix IDEA not fetching `send` method correctly for channels and members. Not sure if it's issue with a IDE, library
- * itself or just a TypeScript language service, but for better methods resolving this is important.
- */
-declare module "discord.js" {
-	class TextBasedChannels {
-		send(options: string | MessagePayload | MessageOptions): Promise<Message>;
-
-		lastMessageId: Snowflake | null;
-		readonly lastMessage: Message | null;
-		lastPinTimestamp: number | null;
-		readonly lastPinAt: Date | null;
-
-		awaitMessageComponent<T extends MessageComponentInteraction = MessageComponentInteraction>(
-			options?: AwaitMessageComponentOptions<T>,
-		): Promise<T>;
-
-		awaitMessages(options?: AwaitMessagesOptions): Promise<Collection<Snowflake, Message>>;
-
-		bulkDelete(
-			messages: Collection<Snowflake, Message> | readonly MessageResolvable[] | number,
-			filterOld?: boolean,
-		): Promise<Collection<Snowflake, Message>>;
-
-		createMessageComponentCollector<T extends MessageComponentInteraction = MessageComponentInteraction>(
-			options?: InteractionCollectorOptions<T>,
-		): InteractionCollector<T>;
-
-		createMessageCollector(options?: MessageCollectorOptions): MessageCollector;
-
-		sendTyping(): Promise<void>;
-	}
-}
 
 declare namespace Cognitum {
 	/**
