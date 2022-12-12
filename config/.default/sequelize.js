@@ -2,9 +2,9 @@ const production = require("./db.json");
 
 module.exports = {
 	development: {
-		database: "cognitum_dev",
-		username: "cognitum_dev",
-		password: "cognitum_dev",
+		database: "",
+		username: "",
+		password: "",
 		host: "localhost",
 		port: 3306,
 		dialect: "mariadb"
