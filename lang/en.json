@@ -2,12 +2,6 @@
   "$schema": "../lib/schemas/language.schema.json",
   "_languagePack": {
     "title": "English",
-    "authors": [
-      "Coma Grayce",
-      "KoloMl#8072",
-      "sadnessmilkshake#2014"
-    ],
-    "version": "0.11.4",
     "dateLocale": "en-US"
   },
   "bot": {
@@ -35,6 +29,29 @@
       "links": {
         "title": "Links:",
         "description": "[Discord guild](%discordGuildInviteUrl%)\n[GitHub repository](%repositoryUrl%)\n[Report problem or make a suggestion](%issuesUrl%)"
+      }
+    },
+    "channel": {
+      "title": "Channel",
+      "description": "Command for showing information about channel or changing this channel's properties.",
+      "example": {
+        "status": "`channel` — Shows information about current channel and visibility status;",
+        "show": "`channel show` — Shows current channel in the activity top;",
+        "hide": "`channel hide` — Hides current channel from the activity top."
+      },
+      "info": {
+        "title": "Channel: #%channelName%",
+        "description": "**Channel ID:** %id%\n**Created:** %createdAt%\n\n__Settings:__\n%settings%",
+        "settings": {
+          "hidden": {
+            "on": "Hidden from activity top",
+            "off": "Shown in activity top"
+          }
+        }
+      },
+      "visibilityToggle": {
+        "title": "Channel visibility updated!",
+        "description": "Visibility of the channel <#%channelId%> is updated!\n\n%settings%"
       }
     },
     "doc": {
@@ -193,6 +210,11 @@
           "name": "Latin with cyrillic transliteration",
           "description": "This mode validate nicknames only with latin symbols, numbers and symbols from this list: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname. Cyrillic symbols (`Аа-Яя`) will be transliterated to the latin symbols before clearing.",
           "regexp": "Invalid symbols detection RegExp: `/(?:^[^\\w]|[^\\w\\d]$|[^\\w\\d\\s'._-])/g`"
+        },
+        "latin_cyrillic": {
+          "name": "Latin and cyrillic",
+          "description": "This mode validate nicknames only with latin symbols, cyrillic symbols, numbers, characters: `.`, `-`, `_`, `'`, `(space)`. Any other symbols will be deleted from nickname.",
+          "regexp": "Invalid symbols detection RegExp: `/^[^\\wА-яЁё]|[^\\w\\dА-я]$|[^\\w\\d\\sА-я'._-]/g`"
         }
       },
       "status": {
@@ -272,6 +294,43 @@
         "channels": "No channels activity tracked yet!",
         "voice": "No voice activity tracked yet!",
         "members": "No members activity tracked yet!"
+      },
+      "footer": {
+        "hiddenChannels": "Some of the channels are not found and will be hidden on the next request."
+      }
+    },
+    "tracking": {
+      "title": "Manage Statistics Tracking",
+      "description": "Command for managing statistics tracking for users. Allows you to disable or enable tracking.\n\n__Data stored only when tracking enabled:__\n\n+ Your membership in guilds where this bot exist;\n+ Amount of time spent by you in voice channels;\n+ Amount and size of messages sent by you in all text channels.\n\n__Data which always being stored:__\n\n+ Your user ID;\n+ Status of tracking.",
+      "example": {
+        "enable": "`tracking on` — Enable tracking;",
+        "disable": "`tracking off` — Disable tracking and remove all data related to your account."
+      },
+      "embeds": {
+        "alreadyTrackable": {
+          "title": "Tracking Already Enabled",
+          "description": "Activity tracking is already enabled for your account. If you want to disable it, use `tracking off` command."
+        },
+        "alreadyNotTrackable": {
+          "title": "Tracking Already Disabled",
+          "description": "Activity tracking is already disabled for your account. If you want to enable it, use `tracking on` command."
+        },
+        "enabled": {
+          "title": "Tracking Enabled Successfully",
+          "description": "Tracking enabled successfully. Bot will start tracking activity for your account."
+        },
+        "disabled": {
+          "title": "Tracking Disabled Successfully",
+          "description": "Tracking disabled successfully. Bot will stop tracking activity for your account. All existing data related to your account was removed."
+        },
+        "disableConfirmation": {
+          "title": "Confirmation",
+          "description": "Are you sure you want to stop tracking your activity?\n\n**Warning:** This action cannot be undone. All data related to your account will be removed.\n\nTo confirm this action type `confirm` to this channel. To cancel type anything else. Action will be cancelled automatically in 30 seconds."
+        },
+        "disableCancelled": {
+          "title": "Cancelled",
+          "description": "Disabling tracking was cancelled. If you want to try disabling tracking again, use `tracking off` command."
+        }
       }
     },
     "welcome": {
@@ -347,6 +406,24 @@
         "length": "Argument #%argumentIndex% must have length `%requiredLength%`!",
         "valueList": "Argument accepts values %argumentExpectedList%, but `%argumentPassed%` argument passed.",
         "value": "Invalid argument passed: `%argumentPassed%`."
+      },
+      "invalidLoggingChannel": {
+        "invalidChannel": {
+          "title": "Invalid channel type!",
+          "description": "<#%channelId%>'s channel type is invalid! Check the channel type of selected channel.\n**Note:** Only plain text channels are supported as logging channels."
+        },
+        "invalidChannelId": {
+          "title": "Failed to fetch the channel!",
+          "description": "Please send correct channel ID or mention the channel you want to use as logging channel. For more details call `help logs` command."
+        },
+        "missingChannel": {
+          "title": "Channel not found!",
+          "description": "Channel you trying to use as logging channel can't be located. Note that bot must have access to read and write messages to selected channel."
+        },
+        "unusualChannelType": {
+          "title": "Unsupported channel!",
+          "description": "Channel <#%channelId%> is not supported as logging channel!\n**Note:** Use only plain text channels! Announce channels or threads are not allowed for the logs."
+        }
       },
       "timeString": {
         "title": "Incorrect time string passed!",
