@@ -6,4 +6,6 @@ export default class GuildMemberModel extends BaseModel<GuildMemberModel> {
 	declare id_guild: string;
 	declare id_user: string;
 	declare access: CreationOptional<number>;
+	declare message: CreationOptional<string>;
+	declare voice: CreationOptional<string>;
 }
