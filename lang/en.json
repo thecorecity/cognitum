@@ -265,7 +265,9 @@
         "owner": "Guild Owner",
         "admin": "Guild Administrator",
         "lastJoined": "**Last join:** %joinDate%",
-        "accountCreated": "**Registered:** %createDate%"
+        "accountCreated": "**Registered:** %createDate%",
+        "voiceActivity": "**Voice activity:** %totalTime%",
+        "chatActivity": "**Chat activity:** %totalWords%"
       }
     },
     "remind": {

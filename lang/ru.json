@@ -265,7 +265,9 @@
         "owner": "Владелец гильдии",
         "admin": "Администратор гильдии",
         "lastJoined": "**Последний вход:** %joinDate%",
-        "accountCreated": "**Регистрация:** %createDate%"
+        "accountCreated": "**Регистрация:** %createDate%",
+        "voiceActivity": "**Голосовая активность:** %totalTime%",
+        "chatActivity": "**Активность чата:** %totalWords%"
       }
     },
     "remind": {
