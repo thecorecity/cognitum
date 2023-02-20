@@ -25,4 +25,5 @@ export default class GuildModel extends BaseModel<GuildModel> {
 	declare logs_msgimage_event: CreationOptional<number>;
 	declare logs_msgupdate_event: CreationOptional<number>;
 	declare language: CreationOptional<string>;
+	declare cache_timestamp: CreationOptional<Date | string>;
 }
