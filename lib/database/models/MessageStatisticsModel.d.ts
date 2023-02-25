@@ -9,6 +9,7 @@ export default class MessageStatisticsModel extends BaseModel<MessageStatisticsM
 	declare id_channel: string;
 	declare timestamp: CreationOptional<Date | string>;
 	declare weight: number;
+	declare cached: number;
 
 	readonly GuildMemberModel: GuildMemberModel;
 	readonly GuildChannelModel: GuildChannelModel;

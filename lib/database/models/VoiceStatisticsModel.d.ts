@@ -7,6 +7,7 @@ export default class VoiceStatisticsModel extends BaseModel<VoiceStatisticsModel
 	declare id_member: number;
 	declare timestamp_begin: Date | string;
 	declare weight: string;
+	declare cached: number;
 
 	readonly GuildMemberModel: GuildMemberModel;
 }
