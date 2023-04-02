@@ -281,7 +281,7 @@
     },
     "top": {
       "title": "Guild Statistics",
-      "description": "Showing guild statistics such as:\n\n`channels` `ch` — guild channels activity;\n`users` `u` — guild members activity;\n`voice` `v` — guild members voice activity.",
+      "description": "Showing guild statistics such as:\n\n`channels` `ch` — guild channels activity;\n`users` `u` — guild members activity;\n`voice` `v` — guild members voice activity.\n\n**Note:** After some time, statistics for this guild will be generated from precalculated cached values.",
       "example": {
         "channels": "`top channels` — Show first page of the top channels activity;",
         "voiceShort": "`top v` — Show first page of the top voice activity;",
