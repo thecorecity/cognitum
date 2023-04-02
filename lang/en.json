@@ -299,7 +299,8 @@
       },
       "footer": {
         "hiddenChannels": "Some of the channels are not found and will be hidden on the next request."
-      }
+      },
+      "cachedFooter": "Statistics for %cachedTimestamp%"
     },
     "tracking": {
       "title": "Manage Statistics Tracking",
