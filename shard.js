@@ -14,7 +14,7 @@ const cognitum = new CognitumClient({
 		GatewayIntentBits.GuildVoiceStates,
 		GatewayIntentBits.MessageContent,
 		// Detecting new ban and unban events
-		GatewayIntentBits.GuildBans,
+		GatewayIntentBits.GuildModeration,
 	]
 });
 
