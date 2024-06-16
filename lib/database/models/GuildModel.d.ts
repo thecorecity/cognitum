@@ -8,11 +8,6 @@ export default class GuildModel extends BaseModel<GuildModel> {
 	declare doc_mode: CreationOptional<number>;
 	declare nickname_mode: CreationOptional<number>;
 	declare nickname_type: CreationOptional<string>;
-	declare welcome_mode: CreationOptional<number>;
-	declare welcome_channel: CreationOptional<string | null>
-	declare welcome_manager_role: CreationOptional<string | null>;
-	declare welcome_verified_role: CreationOptional<string | null>;
-	declare welcome_message: CreationOptional<string | null>;
 	declare logs_enabled: CreationOptional<number>;
 	declare logs_private_channel: CreationOptional<string | null>;
 	declare logs_public_channel: CreationOptional<string | null>;
