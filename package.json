@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/thecorecity/cognitum#readme",
   "dependencies": {
-    "axios": "^0.21.4",
+    "axios": "^0.28.0",
     "discord-api-types": "^0.37.11",
     "discord.js": "^14.11.0",
     "ignore": "^5.1.9",
