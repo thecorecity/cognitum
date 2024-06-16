@@ -335,24 +335,6 @@
           "description": "Disabling tracking was cancelled. If you want to try disabling tracking again, use `tracking off` command."
         }
       }
-    },
-    "welcome": {
-      "title": "Welcome feature managing",
-      "description": "Command for managing settings for welcome feature. Only admins can change settings.",
-      "featureToggle": {
-        "on": {
-          "title": "Welcome feature enabled",
-          "description": "Welcome feature has been enabled! Check if manager and verified roles is set up correctly and welcome channel is set too."
-        },
-        "off": {
-          "title": "Welcome feature disabled",
-          "description": "Welcome feature disabled. Roles and channel setting will stay, but commands for welcome managers will not work."
-        }
-      },
-      "managerUpdated": {
-        "title": "Welcome feature: Manager role changed",
-        "description": "Manager role successfully changed to <@!%roleID%>. Members marked by this role will be allow now to verify newcomers."
-      }
     }
   },
   "embed": {
