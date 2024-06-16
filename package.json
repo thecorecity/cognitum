@@ -31,12 +31,12 @@
   "homepage": "https://github.com/thecorecity/cognitum#readme",
   "dependencies": {
     "axios": "^0.28.0",
-    "discord-api-types": "^0.37.11",
-    "discord.js": "^14.11.0",
+    "discord-api-types": "^0.37.89",
+    "discord.js": "^14.15.3",
     "ignore": "^5.1.9",
     "lodash": "^4.17.21",
-    "mariadb": "^2.5.3",
-    "sequelize": "^6.32.1",
+    "mariadb": "^3.3.1",
+    "sequelize": "^6.37.3",
     "winston": "^3.3.3"
   },
   "devDependencies": {
