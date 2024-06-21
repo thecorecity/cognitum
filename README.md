@@ -21,7 +21,7 @@
 
 ## Requirements
 
-+ NodeJS v16+
++ NodeJS v18+
 + MariaDB v10.4.7+
 
 ## Required Discord Intents
