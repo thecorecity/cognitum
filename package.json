@@ -2,7 +2,8 @@
   "name": "cognitum",
   "version": "1.0.0",
   "description": "Statistics and utilities bot.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "module",
   "directories": {
     "lib": "lib"
   },
@@ -11,7 +12,9 @@
     "init-dev": "npm run init-dev:devdb && npm run init-dev:migrate",
     "init-dev:migrate": "npx sequelize db:migrate",
     "init-dev:devdb": "node ./init/devdb-init.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx vite build",
+    "start": "cd ./dist && node index.js"
   },
   "repository": {
     "type": "git",
