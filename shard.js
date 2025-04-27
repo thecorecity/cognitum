@@ -1,6 +1,6 @@
-const CognitumClient = require("./lib/classes/CognitumClient");
-const { logger } = require("./lib/classes/Utils");
-const { GatewayIntentBits } = require("discord.js");
+import CognitumClient from "./lib/classes/CognitumClient";
+import {logger} from "./lib/classes/Utils";
+import {GatewayIntentBits} from "discord.js";
 
 const cognitum = new CognitumClient({
 	// Explanation for the intents:

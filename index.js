@@ -1,5 +1,5 @@
-const CognitumShardingManager = require("./lib/classes/CognitumShardingManager");
-const { logger } = require("./lib/classes/Utils");
+import CognitumShardingManager from "./lib/classes/CognitumShardingManager";
+import {logger} from "./lib/classes/Utils";
 
 CognitumShardingManager
 	.initialize()
