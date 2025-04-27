@@ -20,28 +20,27 @@ const logger = createModuleLogger("localization");
 export default class Lang {
 	/**
 	 * Current selected language pack.
-	 * @type {LanguagePack}
 	 */
-	#pack;
+	readonly #pack: LanguagePack;
 
 	/**
-	 * @param {string} language Language pack code.
+	 * @param language Language pack code.
 	 */
-	constructor(language) {
-		if (!this.constructor.#languagesPacks.hasOwnProperty(language)) {
+	constructor(language: string) {
+		if (!Lang.#languagesPacks.hasOwnProperty(language)) {
 			logger.warn(`Failed to load language: ${language}. Using base language instead.`);
 			logger.warn("Traceroute:");
 			console.trace();
-			language = this.constructor.#baseLanguage;
+			language = Lang.#baseLanguage;
 		}
-		this.#pack = this.constructor.#languagesPacks[language];
+		this.#pack = Lang.#languagesPacks[language];
 	}
 
 	/**
 	 * Get text and fill replacements with args object if available.
-	 * @param {string} code Language pack code.
-	 * @param {ReplacementValuesMap} [params] (Optional) Object of parameters for replacing.
-	 * @return {string} Returns text from selected language pack.
+	 * @param code Language pack code.
+	 * @param [params] (Optional) Object of parameters for replacing.
+	 * @return Returns text from selected language pack.
 	 * @example
 	 * // Loading pack with next fields:
 	 * // command.example.title = "Example command"
@@ -56,11 +55,11 @@ export default class Lang {
 	 * });
 	 * // This is example for you, John!
 	 */
-	get(code, params = {}) {
+	get(code: string, params: ReplacementValuesMap = {}): string {
 		let text = this.#pack.getValue(code);
 		// Fallback for non-english language packs
-		if (this.#pack.code !== this.constructor.#baseLanguage && text === code)
-			text = Lang.#languagesPacks[this.constructor.#baseLanguage].getValue(code);
+		if (this.#pack.code !== Lang.#baseLanguage && text === code)
+			text = Lang.#languagesPacks[Lang.#baseLanguage].getValue(code);
 		if (Object.keys(params).length > 0)
 			text = this.#fillReplacements(text, params);
 		return text;
@@ -68,12 +67,12 @@ export default class Lang {
 
 	/**
 	 * Searching for %codeReplacements% and replacing it from args object
-	 * @param {string} text Original text with replacements fields.
-	 * @param {ReplacementValuesMap} params List of parameters for replacement.
-	 * @return {string} Text with replaced values.
+	 * @param text Original text with replacements fields.
+	 * @param params List of parameters for replacement.
+	 * @return Text with replaced values.
 	 * @private
 	 */
-	#fillReplacements(text, params) {
+	#fillReplacements(text: string, params: ReplacementValuesMap): string {
 		return text.replace(/%([A-Za-z_-]+)%/g, (match, code) => {
 			if (params.hasOwnProperty(code))
 				return params[code].toString();
@@ -83,17 +82,15 @@ export default class Lang {
 
 	/**
 	 * Format date by selected language locale.
-	 * @param {Date} target
+	 * @param target
 	 */
-	formatDate(target) {
-		if (!(target instanceof Date))
-			throw new TypeError("Argument must be a Date object!");
+	formatDate(target: Date): string {
 		return target.toLocaleString(this.#pack.dateLocale);
 	}
 
 	/**
 	 * Get language name from current selected pack.
-	 * @return {string} Language name.
+	 * @return Language name.
 	 */
 	get languageName() {
 		return this.#pack.languageName;
@@ -101,35 +98,33 @@ export default class Lang {
 
 	/**
 	 * Flag for preventing reinitialization using `initialize()` method.
-	 * @type {boolean}
 	 */
-	static #initialized = false;
+	static #initialized: boolean = false;
 
 	/**
 	 * Languages packs list. Language code as keys and LanguagePack instances as values.
 	 * @type {Object<string, LanguagePack>}
 	 */
-	static #languagesPacks = {};
+	static #languagesPacks: Record<string, LanguagePack> = {};
 
 	/**
 	 * Base language pack code.
 	 * @type {string}
 	 */
-	static #baseLanguage = "en";
+	static #baseLanguage: string = "en";
 
 	/**
 	 * Languages initialization method. Loads all packs from `/lang` directory and caching all packs for requesting
 	 * different languages in code.
 	 * @return {Promise<void>}
 	 */
-	static async initialize() {
+	static async initialize(): Promise<void> {
 		if (this.#initialized)
 			return void logger.warn("Language packs system already loaded!");
 
 		logger.info("Loading languages packs in asynchronous mode...");
 
-		/** @type {string[]} */
-		const files = await fs.readdir(process.cwd() + "/lang/");
+		const files: string[] = await fs.readdir(process.cwd() + "/lang/");
 
 		// English language pack is required for work!
 		if (!files.includes("en.json")) {
@@ -156,10 +151,10 @@ export default class Lang {
 
 	/**
 	 * Get languages list loaded on initialization.
-	 * @return {LanguagesListArray} List of packs with metadata about this packs.
+	 * @return List of packs with metadata about this packs.
 	 */
-	static getLanguagesList() {
-		const languages = [];
+	static getLanguagesList(): LanguagesListArray {
+		const languages: LanguagesListArray = [];
 
 		for (const code in this.#languagesPacks) {
 			if (!this.#languagesPacks.hasOwnProperty(code))
@@ -176,22 +171,20 @@ export default class Lang {
 
 	/**
 	 * Check is language pack with passed code is exist.
-	 * @param {string} code Language code.
-	 * @return {boolean} Is this language pack exist.
+	 * @param code Language code.
+	 * @return Is this language pack exist.
 	 */
-	static isPackExist(code) {
+	static isPackExist(code: string): boolean {
 		return this.#languagesPacks.hasOwnProperty(code);
 	}
 }
 
 /**
  * List of loaded languages. Contains only meta data about languages packs.
- *
- * @typedef {[{code: string, name: string}]} LanguagesListArray
  */
+type LanguagesListArray = { code: string; name: string; }[];
 
 /**
  * Object with values for replacement.
- *
- * @typedef {Object<string,string|number>} ReplacementValuesMap
  */
+type ReplacementValuesMap = Record<string, string | number>;
