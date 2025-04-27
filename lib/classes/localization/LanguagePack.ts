@@ -23,20 +23,18 @@ import * as fs from "node:fs";
 export default class LanguagePack {
 	/**
 	 * Language pack code.
-	 * @type {string}
 	 */
-	#code;
+	readonly #code: string;
 
 	/**
 	 * Language pack fields loaded from JSON.
-	 * @type {Object}
 	 */
-	#fields = {};
+	readonly #fields: Record<string, string> = {};
 
 	/**
-	 * @param {string} languageCode Language code.
+	 * @param languageCode Language code.
 	 */
-	constructor(languageCode = "") {
+	constructor(languageCode: string = "") {
 		this.#fields = JSON.parse(
 			fs.readFileSync(process.cwd() + "/lang/" + languageCode + ".json").toString()
 		);
@@ -46,12 +44,12 @@ export default class LanguagePack {
 
 	/**
 	 * Get value from language pack.
-	 * @param {string} fieldCode Path to field.
-	 * @return {string} Value from requested path. If nothing found in requested path then it returns requested
+	 * @param fieldCode Path to field.
+	 * @return Value from requested path. If nothing found in requested path then it returns requested
 	 *     fieldCode. Also if requested value is not a string, it will also returns requested fieldCode.
 	 */
-	getValue(fieldCode) {
-		let result = _.at(this.#fields, [fieldCode])[0] ?? fieldCode;
+	getValue(fieldCode: string): string {
+		let result: any = _.at(this.#fields, [fieldCode])[0] ?? fieldCode;
 		if (typeof result !== "string")
 			return fieldCode;
 		return result;
@@ -59,7 +57,7 @@ export default class LanguagePack {
 
 	/**
 	 * Get language name from pack.
-	 * @return {string} Language name.
+	 * @return Language name.
 	 */
 	get languageName() {
 		return this.getValue("_languagePack.title");
@@ -67,7 +65,7 @@ export default class LanguagePack {
 
 	/**
 	 * Getter for language pack code.
-	 * @return {string} Language code.
+	 * @return Language code.
 	 */
 	get code() {
 		return this.#code;
@@ -75,7 +73,6 @@ export default class LanguagePack {
 
 	/**
 	 * Get current date locale.
-	 * @return {string}
 	 */
 	get dateLocale() {
 		return this.getValue("_languagePack.dateLocale");
