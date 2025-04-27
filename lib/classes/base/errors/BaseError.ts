@@ -1,17 +1,23 @@
 import ErrorEmbed from "../../embed/ErrorEmbed";
+import type CommandContext from "../../commands/CommandContext";
+import type {ThumbnailMode} from "../../embed/DefaultEmbed";
+
+interface EmbedConversionOptions {
+	context: CommandContext;
+	thumbnailMode?: ThumbnailMode;
+}
 
 // noinspection JSPotentiallyInvalidUsageOfClassThis
 export default class BaseError extends Error {
 	/**
 	 * Current error code. This property used to resolve embed titles and descriptions.
-	 * @type {string}
 	 */
-	static errorCode = "default";
+	static errorCode: string = "default";
 
 	/**
-	 * @param {string} errorMessage Error message to show in console.
+	 * @param errorMessage Error message to show in console.
 	 */
-	constructor(errorMessage) {
+	constructor(errorMessage: string) {
 		super();
 		this.message = errorMessage;
 	}
@@ -19,11 +25,11 @@ export default class BaseError extends Error {
 	/**
 	 * Create embed from current error context.
 	 * @param {Object} embedOptions Options for creating embed.
-	 * @param {CommandContext} embedOptions.context Target command context.
-	 * @param {ThumbnailMode} [embedOptions.thumbnailMode="self"] (Optional) Suggested thumbnail mode for error.
-	 * @return {ErrorEmbed} Formatted embed for current embed.
+	 * @param embedOptions.context Target command context.
+	 * @param [embedOptions.thumbnailMode="self"] (Optional) Suggested thumbnail mode for error.
+	 * @return Formatted embed for current embed.
 	 */
-	toEmbed({ context, thumbnailMode }) {
+	toEmbed({ context, thumbnailMode }: EmbedConversionOptions): ErrorEmbed {
 		const embed = new ErrorEmbed(
 			context.message, thumbnailMode
 		);
@@ -46,20 +52,20 @@ export default class BaseError extends Error {
 
 	/**
 	 * Generate lang code for current embed error title.
-	 * @return {string} Embed title code.
+	 * @return Embed title code.
 	 * @private
 	 */
-	generateEmbedTitle() {
-		return `embed.errors.${this.constructor.errorCode}.title`;
+	generateEmbedTitle(): string {
+		return `embed.errors.${(this.constructor as typeof BaseError).errorCode}.title`;
 	}
 
 	/**
 	 * Generate lang code for current embed error description.
-	 * @return {string} Embed description code.
+	 * @return Embed description code.
 	 * @private
 	 */
-	generateEmbedDescription() {
-		return `embed.errors.${this.constructor.errorCode}.description`;
+	generateEmbedDescription(): string {
+		return `embed.errors.${(this.constructor as typeof BaseError).errorCode}.description`;
 	}
 
 	/**
@@ -69,7 +75,7 @@ export default class BaseError extends Error {
 	 * @private
 	 */
 	// eslint-disable-next-line no-unused-vars
-	generateEmbedOptions(context) {
+	generateEmbedOptions(context: CommandContext): Record<string, string> {
 		return {
 			errorMessage: this.message
 		};
