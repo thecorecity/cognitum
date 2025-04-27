@@ -1,5 +1,7 @@
-import DefaultEmbed from "./DefaultEmbed";
+import DefaultEmbed, {ThumbnailMode} from "./DefaultEmbed";
 import Config from "../ConfigManager";
+import type CommandContext from "../commands/CommandContext";
+import type {Message} from "discord.js";
 
 /**
  * # Error Embed
@@ -7,10 +9,10 @@ import Config from "../ConfigManager";
  */
 export default class ErrorEmbed extends DefaultEmbed {
 	/**
-	 * @param {import("discord.js").Message | CommandContext} target Target message of command context.
-	 * @param {ThumbnailMode} [thumbnailMode = "self"] (Optional) Thumbnail mode.
+	 * @param target Target message of command context.
+	 * @param [thumbnailMode = "self"] (Optional) Thumbnail mode.
 	 */
-	constructor(target, thumbnailMode = "self") {
+	constructor(target: Message<true> | CommandContext, thumbnailMode: ThumbnailMode = "self") {
 		super(target, thumbnailMode);
 		this
 			.setTitle(this.lang.get("embed.errors.default.title"))

@@ -1,10 +1,10 @@
-import {EmbedBuilder} from "discord.js";
+import {EmbedBuilder, type User} from "discord.js";
 
 export default class DirectMessageEmbed extends EmbedBuilder {
 	/**
-	 * @param {import("discord.js").User} user DiscordJS user instance.
+	 * @param user DiscordJS user instance.
 	 */
-	constructor(user) {
+	constructor(user: User) {
 		super();
 		this.setColor(0x000000);
 		if (user.avatarURL())

@@ -5,8 +5,12 @@ import CommandContext from "../commands/CommandContext";
 
 /**
  * Available thumbnail modes.
- * @typedef {"guild"|"user"|"self"} ThumbnailMode
  */
+export type ThumbnailMode = "guild" | "user" | "self";
+/**
+ * Function for resolving the URL of thumbnail using the message.
+ */
+type ThumbnailResolver = (message: Message<true>) => string | null;
 
 /**
  * # Default Embed
@@ -16,52 +20,39 @@ import CommandContext from "../commands/CommandContext";
 export default class DefaultEmbed extends EmbedBuilder {
 	/**
 	 * Private lang instance.
-	 * @type {Lang}
 	 */
-	lang;
+	protected lang: Lang;
 
 	/**
 	 * Map of functions for receiving different icons types for default embed.
 	 * @type {Object<ThumbnailMode, Function>}
 	 */
-	static #resolveThumbnail = {
+	static #resolveThumbnail: Record<ThumbnailMode, ThumbnailResolver> = {
 		/**
 		 * Get guild icon from message guild.
-		 * @param {import("discord.js").Message} message Target message.
-		 * @return {string|null} Picture URL.
 		 */
-		guild(message) {
-			return message.guild.iconURL();
-		},
+		guild: message => message.guild.iconURL(),
 		/**
 		 * Get author avatar from message.
-		 * @param {import("discord.js").Message} message Target message.
-		 * @return {string} Picture URL.
 		 */
-		user(message) {
-			return message.author.avatarURL();
-		},
+		user: message => message.author.avatarURL(),
 		/**
 		 * Get bot avatar.
-		 * @param {import("discord.js").Message} message Target message.
-		 * @return {string} Picture URL.
 		 */
-		self(message) {
-			return message.client.user.avatarURL();
-		}
+		self: message => message.client.user.avatarURL()
 	};
 
 	/**
-	 * @param {import("discord.js").Message | CommandContext} target Target message or current command context.
-	 * @param {ThumbnailMode} [thumbnailMode="self"] (Optional) Thumbnail mode.
+	 * @param target Target message or current command context.
+	 * @param [thumbnailMode="self"] (Optional) Thumbnail mode.
 	 */
-	constructor(target, thumbnailMode = "self") {
+	constructor(target: Message<true> | CommandContext, thumbnailMode: ThumbnailMode = "self") {
 		super();
-		let message;
+		let message: Message<true>;
 		if (target instanceof CommandContext) {
 			message = target.message;
 			this.lang = target.lang;
-		} else if (target instanceof Message) {
+		} else {
 			// TODO Resolving language from message
 			this.lang = new Lang("en");
 			message = target;
