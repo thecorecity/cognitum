@@ -1,21 +1,22 @@
 import winston from "winston";
+import {Cognitum} from "../types/types.js";
 
 /**
  * Centralized logging function. Used for unified style of logging.
- * @param {Cognitum.LogType} type Type of log.
- * @param {string} message Log message to show.
+ * @param type Type of log.
+ * @param message Log message to show.
  *
- * @deprecated Deprecated! Use {@link Utils.logger} instead.
+ * @deprecated Deprecated! Use {@link logger} instead.
  */
-export function log(type, message) {
+export function log(type: Cognitum.LogType, message: string) {
 	const now = new Date();
 	console.log(`${now.toLocaleString()} [${type}] ${message}`);
 }
 
 /**
  * Get file name from basename with extension.
- * @param {string} basename Filename with extension.
- * @return {string} Filename without extension. If no extensions available it returns the whole basename.
+ * @param basename Filename with extension.
+ * @return Filename without extension. If no extensions available it returns the whole basename.
  * @example
  * let basenameWithExtension = "example.json";
  * let basenameWithoutExtension = "README";
@@ -25,7 +26,7 @@ export function log(type, message) {
  * Utils.fileName(basenameWithoutExtension);
  * // "README"
  */
-export function fileName(basename) {
+export function fileName(basename: string): string {
 	return basename.split(".")
 		.slice(0, 1 - +basename.includes(".") * 2)
 		.join(".");
@@ -44,17 +45,14 @@ export function fileName(basename) {
  * Utils.fileExtension(basenameWithoutExtension);
  * // false
  */
-export function fileExtension(basename) {
-	const fileParts = basename.split(".");
-	if (fileParts <= 1)
-		return false;
-	return fileParts.pop();
+export function fileExtension(basename: string): string | boolean {
+	return basename.split(".").pop() ?? false
 }
 
 /**
  * Create time string in format `1`d `1`h `1`m `1`s.
- * @param {number} seconds Number of seconds.
- * @return {string} Time string.
+ * @param seconds Number of seconds.
+ * @return Time string.
  * @example
  * formatTimeString(60);
  * // "1m"
@@ -63,12 +61,12 @@ export function fileExtension(basename) {
  * formatTimeString(100500);
  * // "1d 3h 55m"
  */
-export function formatTimeString(seconds) {
+export function formatTimeString(seconds: number): string {
 	seconds = Math.floor(seconds);
 	let minutes = Math.floor(seconds / 60);
 	let hours = Math.floor(minutes / 60);
 	let days = Math.floor(hours / 24);
-	let result = [];
+	let result: string[] = [];
 
 	if (seconds % 60)
 		result.unshift(`${seconds % 60}s`);
@@ -84,10 +82,10 @@ export function formatTimeString(seconds) {
 
 /**
  * Escape special markdown symbol "`" and wrapping this string into code block (with single quote).
- * @param {string} value Original string.
- * @return {string} Escaped string. If after escaping this string will empty then it returns empty string.
+ * @param value Original string.
+ * @return Escaped string. If after escaping this string will empty then it returns empty string.
  */
-export function escapeMarkdown(value) {
+export function escapeMarkdown(value: string): string {
 	let escaped = value.replace(/`/g, "");
 	if (escaped.length === 0)
 		return "";
@@ -98,10 +96,10 @@ export function escapeMarkdown(value) {
  * Automatically decide how to format the provided username. Discord decided to switch from username#discriminator to
  * the plain username format, so we need to keep the original format when user is not changed it username yet and show
  * a new one in case if he is changed it.
- * @param {string} tagOrUsername Original username.
- * @return {string} Tag#Descriminator for old username format and @username for a new one.
+ * @param tagOrUsername Original username.
+ * @return Tag#Descriminator for old username format and @username for a new one.
  */
-export function resolveUserName(tagOrUsername) {
+export function resolveUserName(tagOrUsername: string): string {
 	if (tagOrUsername.endsWith("#0")) {
 		return "@" + tagOrUsername.replace(/#0$/, "");
 	}
@@ -111,10 +109,10 @@ export function resolveUserName(tagOrUsername) {
 
 /**
  * Format amount of bytes to the human-readable string.
- * @param {number} bytes Amount of bytes.
- * @param {number} [decimals = 2] Amount of decimals after point.
+ * @param bytes Amount of bytes.
+ * @param [decimals = 2] Amount of decimals after point.
  */
-export function formatDataSize(bytes, decimals = 2) {
+export function formatDataSize(bytes: number, decimals: number = 2): string {
 	if (bytes < 1024)
 		return `${bytes} B`;
 	let unit = -1;
@@ -133,34 +131,31 @@ const fileSizeUnits = ["kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
 
 /**
  * Winston logger object.
- * @type {winston.Logger}
  */
-export const logger = createWinstonLogger();
+export const logger: winston.Logger = createWinstonLogger();
 
 /**
  * Create logger for module.
- * @param {string} [moduleName]
- * @return {winston.Logger}
+ * @param moduleName
  */
-export function createModuleLogger(moduleName) {
+export function createModuleLogger(moduleName: string): winston.Logger {
 	return createWinstonLogger(moduleName);
 }
 
 /**
  * Check key safety for using as object key.
- * @param {string} key Target key.
- * @return {boolean} Is this key safe for use as object's key.
+ * @param key Target key.
+ * @return Is this key safe for use as object's key.
  */
-export function checkObjectKeySafety(key) {
+export function checkObjectKeySafety(key: string): boolean {
 	return !unsafeKeys.includes(key);
 }
 
 /**
  * Winston logger factory.
- * @param {string} [label] Label if required
- * @return {winston.Logger}
+ * @param [label] Label if required
  */
-function createWinstonLogger(label = "main") {
+function createWinstonLogger(label: string = "main"): winston.Logger {
 	return winston.createLogger({
 		format: winston.format.combine(
 			winston.format.label({
@@ -168,7 +163,7 @@ function createWinstonLogger(label = "main") {
 			}),
 			winston.format.timestamp(),
 			winston.format.printf(
-				({ level, message, label, timestamp }) => `${timestamp} [${label}] ${level}: ${message}`
+				({level, message, label, timestamp}) => `${timestamp} [${label}] ${level}: ${message}`
 			)
 		),
 		level: "debug",
@@ -180,11 +175,11 @@ function createWinstonLogger(label = "main") {
 
 /**
  * Convert provided value into the bigint or use the default value on failure.
- * @param {any} value Any value for parsing into bigint.
- * @param {bigint} defaultValue Default value in case value is not unable to parse.
- * @return {bigint} Result value.
+ * @param value Any value for parsing into bigint.
+ * @param defaultValue Default value in case value is not unable to parse.
+ * @return Result value.
  */
-export function parseToBigIntOrDefault(value, defaultValue = 0n) {
+export function parseToBigIntOrDefault(value: any, defaultValue: bigint = 0n): bigint {
 	try {
 		return BigInt(value);
 	} catch (e) {
