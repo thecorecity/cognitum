@@ -1,4 +1,33 @@
 import _ from "lodash";
+import type {Message} from "discord.js";
+import type Lang from "../localization/Lang";
+import type GuildModel from "../../database/models/GuildModel";
+import type GuildChannelModel from "../../database/models/GuildChannelModel";
+import type UserModel from "../../database/models/UserModel";
+import type GuildMemberModel from "../../database/models/GuildMemberModel";
+
+interface CommandContextOptions {
+	/**
+	 * Discord message.
+	 */
+	message: Message<true>;
+	/**
+	 * Resolved prefix.
+	 */
+	prefix: string;
+	/**
+	 * Resolved localization class instance.
+	 */
+	language: Lang;
+	/**
+	 * Command execution arguments.
+	 */
+	args: string[];
+	/**
+	 * Map of database instances.
+	 */
+	databaseInstances: ContextModelsInstances;
+}
 
 /**
  * # Command Context
@@ -8,43 +37,34 @@ import _ from "lodash";
 export default class CommandContext {
 	/**
 	 * Current message.
-	 * @type {import("discord.js").Message}
 	 */
-	#internalMessage;
+	readonly #internalMessage: Message<true>;
 
 	/**
 	 * Selected prefix for current guild.
-	 * @type {string}
 	 */
-	#internalPrefix;
+	readonly #internalPrefix: string;
 
 	/**
 	 * Arguments for command execution.
-	 * @type {string[]}
 	 */
-	#internalArguments;
+	readonly #internalArguments: string[];
 
 	/**
 	 * Selected language pack.
-	 * @type {Lang}
 	 */
-	#internalLang;
+	readonly #internalLang: Lang;
 
 	/**
 	 * Object with database instances resolved on parsing begin.
 	 * @type {ContextModelsInstances}
 	 */
-	#databaseInstances;
+	readonly #databaseInstances: ContextModelsInstances;
 
 	/**
-	 * @param {Object} options Context configuration.
-	 * @param {import("discord.js").Message} options.message Discord message.
-	 * @param {string} options.prefix Resolved prefix.
-	 * @param {Lang} options.language Resolved localization class instance.
-	 * @param {string[]} options.args Command execution arguments.
-	 * @param {ContextModelsInstances} options.databaseInstances Map of database instances.
+	 * @param options Context configuration.
 	 */
-	constructor({ message, prefix, language, args, databaseInstances }) {
+	constructor({message, prefix, language, args, databaseInstances}: CommandContextOptions) {
 		this.#internalMessage = message;
 		this.#internalPrefix = prefix;
 		this.#internalArguments = args;
@@ -54,7 +74,6 @@ export default class CommandContext {
 
 	/**
 	 * Current message.
-	 * @return {import("discord.js").Message}
 	 */
 	get message() {
 		return this.#internalMessage;
@@ -62,7 +81,6 @@ export default class CommandContext {
 
 	/**
 	 * Channel of current message. Shorthand for call for the channel from message object.
-	 * @returns {import("discord.js").TextChannel}
 	 */
 	get channel() {
 		return this.#internalMessage.channel;
@@ -70,7 +88,6 @@ export default class CommandContext {
 
 	/**
 	 * List of arguments.
-	 * @return {string[]}
 	 */
 	get args() {
 		return this.#internalArguments;
@@ -78,7 +95,6 @@ export default class CommandContext {
 
 	/**
 	 * Current language pack.
-	 * @return {Lang}
 	 */
 	get lang() {
 		return this.#internalLang;
@@ -86,7 +102,6 @@ export default class CommandContext {
 
 	/**
 	 * Current prefix.
-	 * @return {string}
 	 */
 	get prefix() {
 		return this.#internalPrefix;
@@ -94,18 +109,16 @@ export default class CommandContext {
 
 	/**
 	 * Database models.
-	 * @return {ContextModelsInstances}
 	 */
-	get models() {
+	get models(): ContextModelsInstances {
 		// Clone all the entries to prevent adding anything inside private field.
 		return _.clone(this.#databaseInstances);
 	}
 }
 
-/**
- * @typedef {Object} ContextModelsInstances
- * @property {GuildModel} guild
- * @property {GuildChannelModel} channel
- * @property {UserModel} user
- * @property {GuildMemberModel} member
- */
+interface ContextModelsInstances {
+	guild: GuildModel;
+	channel: GuildChannelModel;
+	user: UserModel;
+	member: GuildMemberModel;
+}
