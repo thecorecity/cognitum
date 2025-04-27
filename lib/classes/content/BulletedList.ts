@@ -1,31 +1,30 @@
 export default class BulletedList extends Array {
 	/**
 	 * Array of allowed marker types.
-	 * @type {string[]}
 	 */
-	static #allowedMarkerTypes = ["string", "number"];
+	static #allowedMarkerTypes: string[] = ["string", "number"];
 
 	/**
 	 * List marker.
 	 * @type {string}
 	 */
-	#marker = "+";
+	#marker: string = "+";
 
 	/**
-	 * @param {string|number|null} value New marker value.
+	 * @param value New marker value.
 	 */
-	set marker(value) {
+	set marker(value: string|number|null) {
 		// Setting up default value on null passed.
 		if (value === null)
 			value = "+";
-		if (this.constructor.#allowedMarkerTypes.includes(typeof value)) {
+		if (BulletedList.#allowedMarkerTypes.includes(typeof value)) {
 			value = value.toString();
 			// If empty string passed then reset marker to default.
 			if (value.length < 1)
 				value = "+";
 			this.#marker = value;
 		} else {
-			console.trace(`Warning: Incorrect marker type passed to ${this.name} object at:`);
+			console.trace(`Warning: Incorrect marker type passed to ${this.constructor.name} object at:`);
 		}
 	}
 
@@ -35,10 +34,10 @@ export default class BulletedList extends Array {
 
 	/**
 	 * Generate text from this array.
-	 * @return {string} Generated content.
+	 * @return Generated content.
 	 */
-	toString() {
-		let tempResult = [];
+	toString(): string {
+		let tempResult: string[] = [];
 		this.forEach(value => {
 			tempResult.push(
 				this.#marker + " " + value

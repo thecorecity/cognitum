@@ -29,22 +29,20 @@ import {logger} from "../Utils";
 export default class CheckList extends Array {
 	/**
 	 * Checked element text or emoji.
-	 * @type {string}
 	 */
-	checkedEmoji = ":white_check_mark:";
+	checkedEmoji: string = ":white_check_mark:";
 
 	/**
 	 * Unchecked element text or emoji.
-	 * @type {string}
 	 */
-	uncheckedEmoji = ":black_large_square:";
+	uncheckedEmoji: string = ":black_large_square:";
 
 	/**
 	 * Generating check list from values in array.
 	 * @return {string} Generated text.
 	 */
-	toString() {
-		let tempResult = [];
+	toString(): string {
+		let tempResult: string[] = [];
 		this.forEach(element => {
 			if (
 				typeof element !== "object"
