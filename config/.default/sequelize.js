@@ -1,6 +1,10 @@
-const production = require("./db.json");
+import * as fs from "node:fs";
 
-module.exports = {
+const production = JSON.parse(
+	fs.readFileSync("./db.json").toString()
+);
+
+export default {
 	development: {
 		database: "",
 		username: "",
