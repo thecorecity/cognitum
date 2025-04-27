@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@liuli-util/vite-plugin-node": "^0.10.0",
+    "@types/lodash": "^4.17.16",
     "readline-sync": "^1.4.10",
     "sequelize-cli": "^6.6.2",
     "typescript": "^5.8.3",
