@@ -3,9 +3,8 @@ import {PermissionsBitField} from "discord.js";
 /**
  * Map of all permissions in Discord.js for translation. Key is a bitfield related to this permission and value is a
  * stringified permission name.
- * @type {Map<bigint, string>}
  */
-const ReadablePermissionsMap = new Map([
+const ReadablePermissionsMap: Map<bigint, string> = new Map([
 	[PermissionsBitField.Flags.Administrator, "ADMINISTRATOR"],
 	[PermissionsBitField.Flags.CreateInstantInvite, "CREATE_INSTANT_INVITE"],
 	[PermissionsBitField.Flags.KickMembers, "KICK_MEMBERS"],
