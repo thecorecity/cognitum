@@ -35,23 +35,20 @@ export default class ConfigManager {
 	 * Configuration files loaded from `/config/` directory.
 	 * @type {Record<string, Object>}
 	 */
-	static #configs = {};
+	static #configs: Record<string, any> = {};
 
 	/**
 	 * Initialization method. Its loading configuration files from `/config/default/` directory
 	 * and checks, if files with same name exists in `/config/` direcotry.
 	 * If some files is not exists in `/config/`, then the default ones are copied.
-	 * @return {Promise<void>}
 	 */
-	static async initialize() {
+	static async initialize(): Promise<void> {
 		logger.info("Loading configuration files...");
 
 		const directory = path.resolve("config");
 		const defaultDirectory = path.resolve("config", ".default");
 
-		/** @type {string[]} */
 		let defaultFiles = await fs.readdir(defaultDirectory);
-		/** @type {string[]} */
 		let configurationFiles = await fs.readdir(directory);
 
 		// Files copying may be restricted by the file system
@@ -102,31 +99,29 @@ export default class ConfigManager {
 
 	/**
 	 * Get configuration value by path. It uses lodash `at` methods to resolve path.
-	 * @param {string} path Path to config entry.
-	 * @return {null|string|any} Value from configuration values list. If value is not set then it returns null.
+	 * @param path Path to config entry.
+	 * @return Value from configuration values list. If value is not set then it returns null.
 	 */
-	static get(path) {
+	static get(path: string): any {
 		return _.at(this.#configs, [path])[0] ?? null;
 	}
 
 	/**
 	 * Base path for resolving values using {@link ConfigManager} instance.
-	 * @type {string}
 	 */
-	#basePath = "";
+	readonly #basePath: string = "";
 
 	/**
-	 * @param {string} path Base path for configuration value.
+	 * @param path Base path for configuration value.
 	 */
-	constructor(path) {
+	constructor(path: string) {
 		this.#basePath = path;
 	}
 
 	/**
 	 * Base path of current {@link ConfigManager} instance.
-	 * @return {string}
 	 */
-	get basePath() {
+	get basePath(): string {
 		return this.#basePath;
 	}
 
@@ -135,8 +130,10 @@ export default class ConfigManager {
 	 * @param {string} path Path to the config entry.
 	 * @return {null|string|any} Value from configuration values list. If value is not set then it returns null.
 	 */
-	get(path) {
-		return this.constructor.get(this.basePath + (this.basePath.endsWith(".") ? "" : ".") + path);
+	get(path: string): any {
+		return ConfigManager.get(
+			this.basePath + (this.basePath.endsWith(".") ? "" : ".") + path
+		);
 	}
 
 	/**
@@ -144,7 +141,7 @@ export default class ConfigManager {
 	 * @param {string} path Appended path value for new {@link ConfigManager} instance.
 	 * @return {ConfigManager} Extendet instance of the {@link ConfigManager}
 	 */
-	extend(path) {
-		return new this.constructor(this.basePath + (this.basePath.endsWith(".") ? "" : ".") + path);
+	extend(path: string): ConfigManager {
+		return new ConfigManager(this.basePath + (this.basePath.endsWith(".") ? "" : ".") + path);
 	}
 }
