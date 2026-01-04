@@ -8,7 +8,7 @@ interface EmbedConversionOptions {
 }
 
 // noinspection JSPotentiallyInvalidUsageOfClassThis
-export default class BaseError extends Error {
+export default class EmbeddableError extends Error {
 	/**
 	 * Current error code. This property used to resolve embed titles and descriptions.
 	 */
@@ -56,7 +56,7 @@ export default class BaseError extends Error {
 	 * @private
 	 */
 	generateEmbedTitle(): string {
-		return `embed.errors.${(this.constructor as typeof BaseError).errorCode}.title`;
+		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.title`;
 	}
 
 	/**
@@ -65,7 +65,7 @@ export default class BaseError extends Error {
 	 * @private
 	 */
 	generateEmbedDescription(): string {
-		return `embed.errors.${(this.constructor as typeof BaseError).errorCode}.description`;
+		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.description`;
 	}
 
 	/**
