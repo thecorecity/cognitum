@@ -1,4 +1,4 @@
-import BaseSanitizerMode from "../../base/BaseSanitizerMode";
+import BaseSanitizerMode from "../base/BaseSanitizerMode";
 
 /**
  * Mode: Allow only latin and cyrillic symbols to be present.

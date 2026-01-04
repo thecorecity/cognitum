@@ -1,4 +1,4 @@
-import BaseSanitizerMode from "../../base/BaseSanitizerMode";
+import BaseSanitizerMode from "../base/BaseSanitizerMode";
 import cyrillicToLatinMap from "../transliteration/CyrillicToLatin";
 
 export default class TransliterateLatinOnlyMode extends BaseSanitizerMode {
