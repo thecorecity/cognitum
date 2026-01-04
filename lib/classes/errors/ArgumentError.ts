@@ -1,30 +1,52 @@
 import EmbeddableError from "./base/EmbeddableError";
+import type CommandContext from "../commands/CommandContext";
 
-export default class ArgumentError extends EmbeddableError {
-	static errorCode = "invalidArgumentError";
+interface ArgumentErrorsMap {
+	min: {
+		minValue: number,
+	},
+	max: {
+		maxValue: number,
+	},
+	length: {
+		argumentIndex: number,
+		requiredLength: number
+	},
+	valueList: {
+		argumentExpectedList: string,
+		argumentPassed: string,
+	},
+	value: {
+		argumentPassed: string,
+	},
+}
 
-	langOptions = {};
+export type ArgumentErrorType = keyof ArgumentErrorsMap;
+
+export default class ArgumentError<ErrorType extends ArgumentErrorType> extends EmbeddableError {
+	static errorCode: string = "invalidArgumentError";
+
+	readonly #langOptions: ArgumentErrorsMap[ErrorType];
 
 	/**
-	 * @param {ArgumentErrorType} errorType Error subtype.
-	 * @param {Object<string, string>} [langOptions={}] Options for passing on lang calling.
+	 * @param errorType Error subtype.
+	 * @param langOptions Options for passing on lang calling.
 	 */
-	constructor(errorType, langOptions = {}) {
+	constructor(errorType: ErrorType, langOptions: ArgumentErrorsMap[ErrorType]) {
 		super(errorType);
-		this.langOptions = langOptions;
+
+		this.#langOptions = langOptions;
 	}
 
 	/**
 	 * @param {CommandContext} context
 	 * @return {Object<string, string>}
 	 */
-	generateEmbedOptions(context) {
-		/** @type {Lang} */
-		const lang = context.lang;
+	generateEmbedOptions(context: CommandContext): Record<string, string> {
 		return {
-			details: lang.get(
-				`embed.errors.${this.constructor.errorCode}.${this.message}`,
-				this.langOptions
+			details: context.lang.get(
+				`embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.${this.message}`,
+				this.#langOptions
 			)
 		};
 	}
