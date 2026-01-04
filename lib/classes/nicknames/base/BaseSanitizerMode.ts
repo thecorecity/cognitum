@@ -12,7 +12,7 @@ export default abstract class BaseSanitizerMode {
 	 * Current value getter.
 	 * @return {string}
 	 */
-	protected get value(): string {
+	get value(): string {
 		return this.#value;
 	}
 
