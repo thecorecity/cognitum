@@ -1,44 +1,28 @@
 import EmbeddableError from "../base/EmbeddableError";
 
+type InvalidLoggingChannelErrorType = "unusualChannelType" | "invalidChannel" | "invalidChannelId" | "missingChannel";
+
 export default class InvalidLoggingChannelError extends EmbeddableError {
-	#maybeChannelId;
+	readonly #maybeChannelId: string;
 
 	static errorCode = "invalidLoggingChannel";
 
-	/**
-	 * @type {Set<string>}
-	 * @protected
-	 */
-	static _detailCodes = new Set([
-		"unusualChannelType",
-		"invalidChannel",
-		"invalidChannelId",
-		"missingChannel"
-	]);
-
-	/**
-	 * @param {"unusualChannelType"|"invalidChannel"|"invalidChannelId"|"missingChannel"} detailCode
-	 * @param {string} maybeChannelId
-	 */
-	constructor(detailCode, maybeChannelId = "") {
-		if (!InvalidLoggingChannelError._detailCodes.has(detailCode))
-			throw new Error("Invalid detail code!");
-
+	constructor(detailCode: InvalidLoggingChannelErrorType, maybeChannelId: string = "") {
 		super(detailCode);
 
 		this.#maybeChannelId = maybeChannelId;
 	}
 
-	generateEmbedTitle() {
-		return `embed.errors.${this.constructor.errorCode}.${this.message}.title`;
+	protected generateEmbedTitle(): string {
+		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.${this.message}.title`;
 	}
 
-	generateEmbedDescription() {
-		return `embed.errors.${this.constructor.errorCode}.${this.message}.description`;
+	protected generateEmbedDescription(): string {
+		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.${this.message}.description`;
 	}
 
 	// noinspection JSCheckFunctionSignatures
-	generateEmbedOptions() {
+	protected generateEmbedOptions(): Record<string, string> {
 		return {
 			channelId: this.#maybeChannelId
 		};

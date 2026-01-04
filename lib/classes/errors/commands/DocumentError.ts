@@ -1,22 +1,22 @@
 import EmbeddableError from "../base/EmbeddableError";
 
+type DocumentErrorType = "exist" | "timeout" | "canceled" | "missing" | "usage";
+
 export default class DocumentError extends EmbeddableError {
 	static errorCode = "documentError";
 
 	/**
-	 * @param {"exist"|"timeout"|"canceled"|"missing"|"usage"} errorCode Code of document error.
+	 * @param errorCode Code of document error.
 	 */
-	constructor(errorCode) {
-		if (typeof errorCode !== "string")
-			throw new TypeError("errorCode must be a string type!");
+	constructor(errorCode: DocumentErrorType) {
 		super(errorCode);
 	}
 
-	generateEmbedTitle() {
-		return `embed.errors.${this.constructor.errorCode}.${this.message}.title`;
+	protected generateEmbedTitle(): string {
+		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.${this.message}.title`;
 	}
 
-	generateEmbedDescription() {
-		return `embed.errors.${this.constructor.errorCode}.${this.message}.description`;
+	protected generateEmbedDescription(): string {
+		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.${this.message}.description`;
 	}
 }

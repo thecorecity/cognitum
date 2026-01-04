@@ -1,7 +1,7 @@
 import StringableError from "../base/StringableError";
 
 export default class SuperUserError extends StringableError {
-	toString() {
+	toString(): string {
 		return ":x: " + this.message;
 	}
 }
