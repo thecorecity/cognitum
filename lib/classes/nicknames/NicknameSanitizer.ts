@@ -1,27 +1,25 @@
 import TransliterateLatinOnlyMode from "./modes/TransliterateLatinOnlyMode";
 import LatinAndCyrillicMode from "./modes/LatinAndCyrillicMode";
+import type BaseSanitizerMode from "./base/BaseSanitizerMode";
 
 export default class NicknameSanitizer {
-	/**
-	 * @type {BaseSanitizerMode}
-	 */
-	#currentMode;
+	#currentMode: BaseSanitizerMode;
 
 	/**
 	 * @param {string} value Value for sanitizing.
 	 * @param {string} mode Mode of the sanitizer.
 	 */
-	constructor(value, mode = this.constructor.defaultMode) {
-		if (!this.constructor.#modes.hasOwnProperty(mode))
+	constructor(value: string, mode: string = NicknameSanitizer.defaultMode) {
+		if (!NicknameSanitizer.#modes.hasOwnProperty(mode))
 			throw new Error(`Following mode not exist: ${mode}!`);
-		this.#currentMode = new this.constructor.#modes[mode](value);
+		this.#currentMode = new NicknameSanitizer.#modes[mode](value);
 	}
 
 	/**
 	 * Execute sanitizer and return new nickname value if required.
 	 * @return {string}
 	 */
-	execute() {
+	execute(): string {
 		if (this.#currentMode.validate())
 			return this.#currentMode.value;
 		const sanitizedNickname = this.#currentMode.sanitize().trim();
@@ -35,7 +33,7 @@ export default class NicknameSanitizer {
 	 * Validate current nickname.
 	 * @return {boolean}
 	 */
-	validate() {
+	validate(): boolean {
 		return this.#currentMode.validate();
 	}
 
@@ -43,7 +41,7 @@ export default class NicknameSanitizer {
 	 * List of registered modes.
 	 * @type {Record<string, typeof BaseSanitizerMode>}
 	 */
-	static #modes = {
+	static #modes: Record<string, new (value: string) => BaseSanitizerMode> = {
 		[TransliterateLatinOnlyMode.getCode()]: TransliterateLatinOnlyMode,
 		[LatinAndCyrillicMode.getCode()]: LatinAndCyrillicMode
 	};
@@ -52,7 +50,7 @@ export default class NicknameSanitizer {
 	 * Get list of existing modes keys. Can be used to check if this mode exist or for listing all available modes.
 	 * @return {string[]}
 	 */
-	static getModesKeys() {
+	static getModesKeys(): string[] {
 		return Object.keys(this.#modes);
 	}
 
@@ -61,7 +59,7 @@ export default class NicknameSanitizer {
 	 * @param {string} mode Mode key.
 	 * @return {boolean} Is this mode exist.
 	 */
-	static isModeExist(mode) {
+	static isModeExist(mode: string): boolean {
 		return this.#modes.hasOwnProperty(mode);
 	}
 
@@ -69,13 +67,13 @@ export default class NicknameSanitizer {
 	 * Default sanitizing mode key.
 	 * @type {string}
 	 */
-	static #defaultMode = TransliterateLatinOnlyMode.getCode();
+	static #defaultMode: string = TransliterateLatinOnlyMode.getCode();
 
 	/**
 	 * Public getter without ability to override default mode key.
 	 * @return {string}
 	 */
-	static get defaultMode() {
+	static get defaultMode(): string {
 		return this.#defaultMode;
 	}
 }
