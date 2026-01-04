@@ -1,13 +1,10 @@
-/**
- * @abstract
- */
-export default class BaseSanitizerMode {
-	#value;
+export default abstract class BaseSanitizerMode {
+	readonly #value: string;
 
 	/**
-	 * @param {string} value Value for validation and sanitizing.
+	 * @param value Value for validation and sanitizing.
 	 */
-	constructor(value) {
+	constructor(value: string) {
 		this.#value = value;
 	}
 
@@ -15,45 +12,23 @@ export default class BaseSanitizerMode {
 	 * Current value getter.
 	 * @return {string}
 	 */
-	get value() {
+	protected get value(): string {
 		return this.#value;
 	}
 
 	/**
 	 * Placeholder for the fully invalid nicknames.
-	 * @return {string}
 	 */
-	get placeholder() {
-		return this.constructor.placeholder;
+	get placeholder(): string {
+		return (this.constructor as typeof BaseSanitizerMode).placeholder;
 	}
 
-	/**
-	 * @abstract
-	 * @return {boolean}
-	 */
-	validate() {
-		throw new Error("Missing sanitizer validation method!");
-	}
+	abstract validate(): boolean;
 
-	/**
-	 * @abstract
-	 * @return {string}
-	 */
-	sanitize() {
-		throw new Error("Missing sanitizer sanitize method!");
-	}
+	abstract sanitize(): string;
 
-	/**
-	 * @abstract
-	 * @type {string}
-	 */
-	static code = "base";
-
-	/**
-	 * @abstract
-	 * @type {string}
-	 */
-	static placeholder = "";
+	static code: string = "base";
+	static placeholder: string = "";
 
 	static getCode() {
 		return this.code;

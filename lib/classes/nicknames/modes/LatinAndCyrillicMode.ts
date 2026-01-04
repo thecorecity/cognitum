@@ -14,14 +14,14 @@ export default class LatinAndCyrillicMode extends BaseSanitizerMode {
 	}
 
 	sanitize() {
-		return this.#removeOtherSymbols(this.value);
+		return this.#removeOtherSymbols();
 	}
 
 	validate() {
-		return !this.constructor.validator.test(this.value);
+		return !LatinAndCyrillicMode.validator.test(this.value);
 	}
 
 	#removeOtherSymbols() {
-		return this.value.replace(this.constructor.validator, "");
+		return this.value.replace(LatinAndCyrillicMode.validator, "");
 	}
 }

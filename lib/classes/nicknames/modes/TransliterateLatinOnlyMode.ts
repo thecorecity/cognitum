@@ -24,7 +24,7 @@ export default class TransliterateLatinOnlyMode extends BaseSanitizerMode {
 	 * @param {string} value Value for transliteration.
 	 * @return {string} Transliterated string.
 	 */
-	#transliterateCyrillic(value) {
+	#transliterateCyrillic(value: string): string {
 		return value.replace(/[А-Яа-яЁё]/g, symbol => {
 			return cyrillicToLatinMap[symbol] ?? symbol;
 		});
@@ -35,11 +35,11 @@ export default class TransliterateLatinOnlyMode extends BaseSanitizerMode {
 	 * @param {string} value Value for clearing other symbols.
 	 * @return {string} Clean
 	 */
-	#removeOtherSymbols(value) {
-		return value.replace(this.constructor.validator, "");
+	#removeOtherSymbols(value: string): string {
+		return value.replace(TransliterateLatinOnlyMode.validator, "");
 	}
 
 	validate() {
-		return !this.constructor.validator.test(this.value);
+		return !TransliterateLatinOnlyMode.validator.test(this.value);
 	}
 }

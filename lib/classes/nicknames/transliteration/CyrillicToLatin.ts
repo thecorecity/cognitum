@@ -1,5 +1,5 @@
 // noinspection NonAsciiCharacters
-const cyrillicToLatinMap = {
+const cyrillicToLatinMap: Record<string, string> = {
 	"Ё": "Yo", "Й": "Y", "Ц": "Ts", "У": "U", "К": "K", "Е": "E", "Н": "N", "Г": "G", "Ш": "Sh", "Щ": "Sch", "З": "Z",
 	"Х": "H", "Ъ": "", "ё": "yo", "й": "y", "ц": "ts", "у": "u", "к": "k", "е": "e", "н": "n", "г": "g", "ш": "sh",
 	"щ": "sch", "з": "z", "х": "h", "ъ": "", "Ф": "F", "Ы": "Y", "В": "V", "А": "A", "П": "P", "Р": "R", "О": "O",
