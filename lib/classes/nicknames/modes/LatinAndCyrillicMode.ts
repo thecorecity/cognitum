@@ -1,9 +1,9 @@
-import BaseSanitizerMode from "../base/BaseSanitizerMode";
+import SanitizerMode from "../base/SanitizerMode";
 
 /**
  * Mode: Allow only latin and cyrillic symbols to be present.
  */
-export default class LatinAndCyrillicMode extends BaseSanitizerMode {
+export default class LatinAndCyrillicMode extends SanitizerMode {
 	static code = "latin_cyrillic";
 	static placeholder = "Rename Me";
 	static #validateRegexp = /^[^\wА-яЁё]|[^\wА-яЁё]$|[^\w\sА-я'.-]/g;

@@ -1,4 +1,4 @@
-export default abstract class BaseSanitizerMode {
+export default abstract class SanitizerMode {
 	readonly #value: string;
 
 	/**
@@ -20,7 +20,7 @@ export default abstract class BaseSanitizerMode {
 	 * Placeholder for the fully invalid nicknames.
 	 */
 	get placeholder(): string {
-		return (this.constructor as typeof BaseSanitizerMode).placeholder;
+		return (this.constructor as typeof SanitizerMode).placeholder;
 	}
 
 	abstract validate(): boolean;

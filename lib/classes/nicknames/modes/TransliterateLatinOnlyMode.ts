@@ -1,7 +1,7 @@
-import BaseSanitizerMode from "../base/BaseSanitizerMode";
+import SanitizerMode from "../base/SanitizerMode";
 import cyrillicToLatinMap from "../transliteration/CyrillicToLatin";
 
-export default class TransliterateLatinOnlyMode extends BaseSanitizerMode {
+export default class TransliterateLatinOnlyMode extends SanitizerMode {
 	static code = "latin";
 	static placeholder = "Rename Me";
 	static #validateRegexp = /^\W|\W$|[^\w\s'.-]/g;

@@ -1,9 +1,9 @@
 import TransliterateLatinOnlyMode from "./modes/TransliterateLatinOnlyMode";
 import LatinAndCyrillicMode from "./modes/LatinAndCyrillicMode";
-import type BaseSanitizerMode from "./base/BaseSanitizerMode";
+import type SanitizerMode from "./base/SanitizerMode";
 
 export default class NicknameSanitizer {
-	#currentMode: BaseSanitizerMode;
+	#currentMode: SanitizerMode;
 
 	/**
 	 * @param {string} value Value for sanitizing.
@@ -45,7 +45,7 @@ export default class NicknameSanitizer {
 	/**
 	 * List of registered modes.
 	 */
-	static #modes = new Map<string, new (value: string) => BaseSanitizerMode>([
+	static #modes = new Map<string, new (value: string) => SanitizerMode>([
 		[TransliterateLatinOnlyMode.getCode(), TransliterateLatinOnlyMode],
 		[LatinAndCyrillicMode.getCode(), LatinAndCyrillicMode],
 	]);
