@@ -1,5 +1,4 @@
-import {PermissionResolvable} from "discord.js";
-import {Model} from "sequelize";
+import { PermissionResolvable } from "discord.js";
 
 declare type PermissionString = import("discord.js").PermissionString;
 

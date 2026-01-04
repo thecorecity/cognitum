@@ -1,5 +1,5 @@
-import {checkObjectKeySafety, createModuleLogger, fileExtension, fileName} from "../Utils";
-import {promises as fs} from "fs";
+import { checkObjectKeySafety, createModuleLogger, fileExtension, fileName } from "../Utils";
+import { promises as fs } from "fs";
 import LanguagePack from "./LanguagePack";
 
 const logger = createModuleLogger("localization");

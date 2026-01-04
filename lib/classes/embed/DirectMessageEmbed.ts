@@ -1,4 +1,4 @@
-import {EmbedBuilder, type User} from "discord.js";
+import { EmbedBuilder, type User } from "discord.js";
 
 export default class DirectMessageEmbed extends EmbedBuilder {
 	/**

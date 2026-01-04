@@ -13,7 +13,7 @@ export default class BulletedList extends Array {
 	/**
 	 * @param value New marker value.
 	 */
-	set marker(value: string|number|null) {
+	set marker(value: string | number | null) {
 		// Setting up default value on null passed.
 		if (value === null)
 			value = "+";

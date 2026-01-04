@@ -1,5 +1,5 @@
 import _ from "lodash";
-import type {Message} from "discord.js";
+import type { Message } from "discord.js";
 import type Lang from "../localization/Lang";
 import type GuildModel from "../../database/models/GuildModel";
 import type GuildChannelModel from "../../database/models/GuildChannelModel";
@@ -64,7 +64,7 @@ export default class CommandContext {
 	/**
 	 * @param options Context configuration.
 	 */
-	constructor({message, prefix, language, args, databaseInstances}: CommandContextOptions) {
+	constructor({ message, prefix, language, args, databaseInstances }: CommandContextOptions) {
 		this.#internalMessage = message;
 		this.#internalPrefix = prefix;
 		this.#internalArguments = args;

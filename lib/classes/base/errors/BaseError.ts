@@ -1,6 +1,6 @@
 import ErrorEmbed from "../../embed/ErrorEmbed";
 import type CommandContext from "../../commands/CommandContext";
-import type {ThumbnailMode} from "../../embed/DefaultEmbed";
+import type { ThumbnailMode } from "../../embed/DefaultEmbed";
 
 interface EmbedConversionOptions {
 	context: CommandContext;

@@ -1,6 +1,6 @@
-import {checkObjectKeySafety, createModuleLogger, fileName} from "./Utils";
+import { checkObjectKeySafety, createModuleLogger, fileName } from "./Utils";
 import path from "path";
-import {promises as fs} from "fs";
+import { promises as fs } from "fs";
 import _ from "lodash";
 import ignore from "ignore";
 

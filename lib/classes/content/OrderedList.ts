@@ -1,4 +1,4 @@
-import {escapeMarkdown} from "../Utils";
+import { escapeMarkdown } from "../Utils";
 
 type ListStylerFunction = (original: string) => string | number;
 
@@ -61,7 +61,7 @@ export default class OrderedList extends Array {
 	 * @param {string} original Original value.
 	 * @return {string} Formatted number if styler set.
 	 */
-	#formatNumber(original: string): string|number {
+	#formatNumber(original: string): string | number {
 		if (typeof this.#styler !== "function")
 			return original;
 		return this.#styler(original) ?? original;

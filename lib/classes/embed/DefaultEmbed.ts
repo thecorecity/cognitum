@@ -1,6 +1,6 @@
 import Config from "../ConfigManager";
 import Lang from "../localization/Lang";
-import {EmbedBuilder, Message} from "discord.js";
+import { EmbedBuilder, Message } from "discord.js";
 import CommandContext from "../commands/CommandContext";
 
 /**

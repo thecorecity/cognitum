@@ -1,5 +1,5 @@
 import winston from "winston";
-import {Cognitum} from "../types/types.js";
+import { Cognitum } from "../types/types.js";
 
 /**
  * Centralized logging function. Used for unified style of logging.
@@ -163,7 +163,7 @@ function createWinstonLogger(label: string = "main"): winston.Logger {
 			}),
 			winston.format.timestamp(),
 			winston.format.printf(
-				({level, message, label, timestamp}) => `${timestamp} [${label}] ${level}: ${message}`
+				({ level, message, label, timestamp }) => `${timestamp} [${label}] ${level}: ${message}`
 			)
 		),
 		level: "debug",

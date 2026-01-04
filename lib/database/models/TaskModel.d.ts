@@ -1,5 +1,5 @@
 import BaseModel from "../../classes/base/BaseModel";
-import {CreationOptional} from "sequelize";
+import { CreationOptional } from "sequelize";
 
 export default class TaskModel extends BaseModel<TaskModel> {
 	declare id: CreationOptional<string>;

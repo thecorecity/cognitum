@@ -1,5 +1,5 @@
 import BaseModel from "../../classes/base/BaseModel";
-import {CreationOptional} from "sequelize";
+import { CreationOptional } from "sequelize";
 
 export default class GuildMemberModel extends BaseModel<GuildMemberModel> {
 	declare id: CreationOptional<number>;

@@ -1,4 +1,4 @@
-import {CreationOptional, InferAttributes, InferCreationAttributes, Model} from "sequelize";
+import { CreationOptional } from "sequelize";
 import BaseModel from "../../classes/base/BaseModel";
 import GuildMemberModel from "./GuildMemberModel";
 

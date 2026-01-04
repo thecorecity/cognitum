@@ -1,6 +1,5 @@
-import {ColumnReference, CreationOptional, ForeignKey} from "sequelize";
+import { CreationOptional } from "sequelize";
 import BaseModel from "../../classes/base/BaseModel";
-import GuildModel from "./GuildModel";
 
 export default class GuildChannelModel extends BaseModel<GuildChannelModel> {
 	declare id: string;

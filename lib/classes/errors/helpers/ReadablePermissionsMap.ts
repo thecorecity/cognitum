@@ -1,4 +1,4 @@
-import {PermissionsBitField} from "discord.js";
+import { PermissionsBitField } from "discord.js";
 
 /**
  * Map of all permissions in Discord.js for translation. Key is a bitfield related to this permission and value is a

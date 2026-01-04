@@ -1,6 +1,6 @@
 import _ from "lodash";
-import {InferAttributes, InferCreationAttributes, InitOptions, Model, ModelAttributes, Sequelize} from "sequelize";
-import {createModuleLogger} from "../Utils";
+import { InferAttributes, InferCreationAttributes, InitOptions, Model, ModelAttributes, Sequelize } from "sequelize";
+import { createModuleLogger } from "../Utils";
 
 const logger = createModuleLogger("database");
 

@@ -1,5 +1,5 @@
 import BaseModel from "../../classes/base/BaseModel";
-import {CreationOptional} from "sequelize";
+import { CreationOptional } from "sequelize";
 import GuildMemberModel from "./GuildMemberModel";
 import GuildChannelModel from "./GuildChannelModel";
 

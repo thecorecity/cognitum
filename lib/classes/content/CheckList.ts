@@ -1,4 +1,4 @@
-import {logger} from "../Utils";
+import { logger } from "../Utils";
 
 /**
  * # Check list

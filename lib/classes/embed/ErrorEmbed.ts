@@ -1,7 +1,7 @@
-import DefaultEmbed, {ThumbnailMode} from "./DefaultEmbed";
+import DefaultEmbed, { ThumbnailMode } from "./DefaultEmbed";
 import Config from "../ConfigManager";
 import type CommandContext from "../commands/CommandContext";
-import type {Message} from "discord.js";
+import type { Message } from "discord.js";
 
 /**
  * # Error Embed
