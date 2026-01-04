@@ -38,11 +38,7 @@ export default class ArgumentError<ErrorType extends ArgumentErrorType> extends 
 		this.#langOptions = langOptions;
 	}
 
-	/**
-	 * @param {CommandContext} context
-	 * @return {Object<string, string>}
-	 */
-	generateEmbedOptions(context: CommandContext): Record<string, string> {
+	protected generateEmbedOptions(context: CommandContext): Record<string, string> {
 		return {
 			details: context.lang.get(
 				`embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.${this.message}`,

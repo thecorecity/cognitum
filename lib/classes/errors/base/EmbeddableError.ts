@@ -2,8 +2,17 @@ import ErrorEmbed from "../../embed/ErrorEmbed";
 import type CommandContext from "../../commands/CommandContext";
 import type { ThumbnailMode } from "../../embed/DefaultEmbed";
 
+/**
+ * Options for creating embed.
+ */
 interface EmbedConversionOptions {
+	/**
+	 * Target command context.
+	 */
 	context: CommandContext;
+	/**
+	 * (Optional) Suggested thumbnail mode for error.
+	 */
 	thumbnailMode?: ThumbnailMode;
 }
 
@@ -24,9 +33,7 @@ export default class EmbeddableError extends Error {
 
 	/**
 	 * Create embed from current error context.
-	 * @param {Object} embedOptions Options for creating embed.
-	 * @param embedOptions.context Target command context.
-	 * @param [embedOptions.thumbnailMode="self"] (Optional) Suggested thumbnail mode for error.
+	 * @param embedOptions Options for creating embed.
 	 * @return Formatted embed for current embed.
 	 */
 	toEmbed({ context, thumbnailMode }: EmbedConversionOptions): ErrorEmbed {
@@ -53,29 +60,26 @@ export default class EmbeddableError extends Error {
 	/**
 	 * Generate lang code for current embed error title.
 	 * @return Embed title code.
-	 * @private
 	 */
-	generateEmbedTitle(): string {
+	protected generateEmbedTitle(): string {
 		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.title`;
 	}
 
 	/**
 	 * Generate lang code for current embed error description.
 	 * @return Embed description code.
-	 * @private
 	 */
-	generateEmbedDescription(): string {
+	protected generateEmbedDescription(): string {
 		return `embed.errors.${(this.constructor as typeof EmbeddableError).errorCode}.description`;
 	}
 
 	/**
 	 * Get values for replacement.
-	 * @param {CommandContext} context Link to current command context. Can be used to generate options.
-	 * @return {Object<string, string>} Replacement values map.
-	 * @private
+	 * @param context Link to current command context. Can be used to generate options.
+	 * @return Replacement values map.
 	 */
 	// eslint-disable-next-line no-unused-vars
-	generateEmbedOptions(context: CommandContext): Record<string, string> {
+	protected generateEmbedOptions(context: CommandContext): Record<string, string> {
 		return {
 			errorMessage: this.message
 		};
