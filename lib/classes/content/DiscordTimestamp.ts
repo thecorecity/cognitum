@@ -1,37 +1,20 @@
 export default class DiscordTimestamp {
-	/**
-	 * @type {Date}
-	 */
-	#date;
-	/**
-	 * @type {string}
-	 */
-	#style;
+	readonly #date: Date;
+	readonly #style: string;
 
 	/**
-	 * @param {Date} date Date to render the tag from.
-	 * @param {string} style Selected date style.
+	 * @param date Date to render the tag from.
+	 * @param style Selected date style.
 	 */
-	constructor(date, style = DiscordTimestamp.styleDefault) {
+	constructor(date: Date, style: string = DiscordTimestamp.styleDefault) {
 		this.#date = date;
 		this.#style = style;
 	}
 
 	/**
-	 * Set style for the date tag.
-	 * @param {string} style Style for the tag.
-	 * @return {DiscordTimestamp}
-	 */
-	setStyle(style) {
-		this.#style = style;
-		return this;
-	}
-
-	/**
 	 * Render the tag for the Discord.
-	 * @return {string}
 	 */
-	toString() {
+	toString(): string {
 		return `<t:${DiscordTimestamp.#passUnixSeconds(this.#date)}${DiscordTimestamp.#passStyle(this.#style)}>`;
 	}
 
@@ -40,7 +23,7 @@ export default class DiscordTimestamp {
 	 * @param {Date} date Date to use to convert into timestamp.
 	 * @return {number} Timestamp in seconds.
 	 */
-	static #passUnixSeconds(date) {
+	static #passUnixSeconds(date: Date): number {
 		return Math.floor(date.getTime() / 1000);
 	}
 
@@ -49,7 +32,7 @@ export default class DiscordTimestamp {
 	 * @param style
 	 * @return {string}
 	 */
-	static #passStyle(style) {
+	static #passStyle(style: any): string {
 		if (!style)
 			return "";
 
@@ -66,6 +49,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleDefault = "";
+
 	/**
 	 * # Short Time
 	 *
@@ -76,6 +60,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleShortTime = "t";
+
 	/**
 	 * # Long Time
 	 *
@@ -86,6 +71,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleLongTime = "T";
+
 	/**
 	 * # Short Date
 	 *
@@ -96,6 +82,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleShortDate = "d";
+
 	/**
 	 * # Long Date
 	 *
@@ -106,6 +93,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleLongDate = "D";
+
 	/**
 	 * # Short Date/Time
 	 *
@@ -116,6 +104,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleShortFull = "f";
+
 	/**
 	 * # Long Date/Time
 	 *
@@ -126,6 +115,7 @@ export default class DiscordTimestamp {
 	 * @type {string}
 	 */
 	static styleLongFull = "F";
+
 	/**
 	 * # Relative Time
 	 *
