@@ -116,11 +116,17 @@ No data is used for advertising, profiling, machine-learning training, or any pu
 ## Data Sharing
 
 Any non-public information that is collected is never sold, rented, or shared with anyone unless required by law or to
-respond to a valid request from Discord (e.g. under their ToS), and we would notify affected users where legally
+respond to a valid request from Discord (e.g. under their ToS), and I would notify affected users where legally
 permitted.
 
-The bot runs on infrastructure operated by the bot operator; the database is not exposed publicly and is accessible only
-to the bot application and the operator for maintenance and support purposes.
+The bot runs on infrastructure I operate; the database is not exposed publicly and is accessible only to the bot
+application and myself for maintenance and support purposes.
+
+**Bot listing/monitoring sites:** every 10 minutes, the bot reports its current **total server (guild) count** — a
+single number, no guild IDs, names, or any other identifying data — to the bot-listing sites it is registered on
+([top.gg](https://top.gg) and [bots.server-discord.com](https://bots.server-discord.com)), so they can display an
+up-to-date server count on the bot's listing page. This is the same number already shown publicly on the top.gg badge
+in the bot's [README](./README.md). No other data is sent to these sites.
 
 ## Retention and Deletion
 
@@ -132,8 +138,8 @@ to the bot application and the operator for maintenance and support purposes.
   addressed in a future version.
 - **Currently, rows are not automatically removed when you leave a server or when the bot is removed from a server.**
   They consist of Discord IDs, configuration, and (for opted-in users) anonymous activity weights, and remain until
-  deleted by the operator — which you can request at any time via the contact below, to be fulfilled within 30 days.
-  Automatic cleanup is planned for a future version.
+  I delete them — which you can request at any time via the contact below, to be fulfilled within 30 days. Automatic
+  cleanup is planned for a future version.
 
 ## Changes to this Policy
 
